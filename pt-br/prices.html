@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louvinha: Preços</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header id="top">
+        <h1><a href="../pt-br.html" class="title">Quarto da Louvinha!</a></h1>
+        
+        <nav class="pages">
+            <a href="social.html">Minhas redes sociais</a>
+            <a class="there">Preços das comissões</a>
+            <a href="finished commissions.html">Comissões feitas</a>
+            <a href="arts.html">Todas as artes (SFW)</a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h2>Calculadora de comissões</h2>
+        <p>Temos aqui uma calculadora! Sim, você pode verificar o preço total do quanto você irá pagar por uma comissão minha!</p>
+        <section class="inside-container calc">
+
+            <div class="calc type">            
+                <p>Tipo de comissão <br>
+                <button id="0" class="true R" onclick="custom()">Custom</button>
+                <button id="1" class="false" onclick="abraca()">YCH Abraçadinhos</button>
+                <button id="2" class="false" onclick="goods()">YCH Show Your Goods</button>
+                <button id="3" class="false L" onclick="pride()">YCH Pride Face</button>
+            </p>
+            </div>
+
+            <hr>
+
+            <div id="custom">
+
+                <h2>Customizada</h2>
+
+            <p>Qualidade: <br>
+                <button onclick="shaderM()" class="R"><</button> 
+                <span class="calcValue" id="shader">Flat colors</span> 
+                <button onclick="shaderP()" class="L">></button>
+            </p>
+
+            <p>Tamanho: <br>
+                <button onclick="sizeM()" class="R"><</button> 
+                <span class="calcValue" id="size">Headshot</span> 
+                <button onclick="sizeP()" class="L">></button>
+            </p>
+
+            <p>Quantidade de OCs: <br>
+                <button onclick="OCsM()" class="R">-</button> 
+                <span class="calcValue" id="OCs">1</span>
+                <button onclick="OCsP()" class="L">+</button>
+            </p>
+
+            <p>Quantidade de versões/Alts: <br>
+                <button onclick="AltsM()" class="R">-</button>
+                <span class="calcValue" id="Alts">1</span>
+                <button onclick="AltsP()" class="L">+</button>
+            </p>
+
+            <p>NSFW? <br>
+                <button onclick="NSFWN()" class="R"><</button>
+                <span class="calcValue" id="NSFW">No</span>
+                <button onclick="NSFWY()" class="L">></button>
+            </p>
+
+            <h3>Total: <br><span id="totalCalc">R$ 5</span></h3>
+            </div>
+
+            <div id="abraca">
+                <h2>YCH: Abraçadinhos</h2>
+
+                <p>Quantos OCs? <br>
+                    <button class="R" onclick="OCsM1()">-</button>
+                    <span class="calcValue" id="OCs1">1</span>
+                    <button class="L" onclick="OCsP1()">+</button>
+                </p>
+
+                <p>Fundo peronalizado? (no caso, desenhado) <br>
+                    <button class="R" onclick="BGM1()"><</button>
+                    <span class="calcValue" id="BG1">No</span>
+                    <button class="L" onclick="BGP1()">></button>
+                </p>
+
+                <h3>Total: <br><span id="totalCalc1">R$ 5</span></h3>
+            </div>
+
+            <div id="goods">
+                <h2>YCH Show Your Goods</h2>
+                <p>Fundo personalizado? <br>
+                    <button class="R" onclick="BGM2()"><</button>
+                    <span class="calcValue" id="BG2">No</span>
+                    <button class="L" onclick="BGP2()">></button>
+                </p>
+
+                <p>Quer versão NSFW? <br>
+                    <button class="R" onclick="NSFWM2()"><</button>
+                    <span class="calcValue" id="NSFW2">No</span>
+                    <button class="L" onclick="NSFWP2()">></button>
+                </p>
+
+                <h3>Total: <br><span id="totalCalc2">R$ 5</span></h3>
+            </div>
+
+            <div id="pride">
+                <h2>YCH Pride Face</h2>
+                <p>Fundo personalizado? <br>
+                    <button class="R" onclick="BGM3()"><</button>
+                    <span class="calcValue" id="BG3">No</span>
+                    <button class="L" onclick="BGP3()">></button>
+                </p>
+
+                <h3>Total: <br><span id="totalCalc3">R$ 5</span></h3>
+            </div>
+
+        </section>
+    </section>
+
+    <section class="container">
+        <h2>Como pedir as minhas comissões?</h2>
+        <p>Para pedir minhas comissões, você terá que fazer os seguintes passos:</p>
+        <ol>
+            <li>Entrar no meu servidor do discord: <a href="https://discord.gg/zP5xeXNJ9M" target="_blank">Louvaworld</a></li>
+            <li>Abrir o canal "ticket" (tem como acessar o canal clicando nesse link após entrar no server: <a href="https://discord.com/channels/849248533130379284/1208417687265480704" target="_blank">Canal "ticket"</a></li>
+            <li>Dentro do canal, clique no botão verde "Fazer pedido" (como mostra a imagem)<br><img class="imginfo" src="../img/info/1.png" alt="Imagem mostrando o canal ticket do servidor Louvaworld" width="500px"></li>
+            <li>E pronto! agora siga as instruções predefinidas até eu ou a minha irmã (Luna) responder!</li>
+        </ol>
+    </section>
+
+    <section class="container">
+        <h2>Informações úteis</h2>
+        <ul>
+            <li>Aceito fazer todas as espécies</li>
+            <li>Qualquer gênero</li>
+            <li>Pagamento adiantado (via pix)</li>
+            <li>Faço NSFW</li>
+        </ul>
+    </section>
+
+
+    <section class="container">
+        <h2>Comissões personalizadas</h2>
+        <p>Aqui estão os preços das minhas comissões personalizadas:</p>
+
+        <ul>
+            <li>Headshot: <b>R$ 5,00</b></li>
+            <li>Halfbody: <b>R$ 7,50</b></li>
+            <li>Fullbody: <b>R$ 10,00</b></li>
+            <li>Ocs extras: <b>+50%</b> por oc</li>
+            <li>Alts: <b>+25%</b> por alt</li>
+            <li>NSFW: <b>+ R$ 2,00</b></li>
+            <li>Mini comic: <b>R$ 8,00</b> por quadro</li>
+        </ul>
+    <div class="images toShow">
+        <img class="imgcmm" src="../img/cmm/4.png" alt="commission table 1" width="500px">
+        <img class="imgcmm" src="../img/cmm/5.png" alt="commission table 2" width="500px">
+    </div>
+    </section>
+
+    <section class="container">
+        <h2>YCHs</h2>
+        <p>Segue a lista de todos os meus YCHs!</p>
+
+        <section class="inside-container">
+            <h3>Abraçadinhos</h3>
+            <div class="images toShow">
+                <img class="imgcmm"src="../img/cmm/1.png" alt="Base da comissão YCH Abraçadinhos" width="400px">
+            </div>
+            <p>Valores: </p>
+            <ul>
+                <li>Apenas um dos personagem: <b>R$ 5,00</b></li>
+                <li>Ambos os personagens: <b>R$ 7,50</b></li>
+                <li>Fundo padrão (imagem no frame incluso): <b>+ R$ 0,00</b></li>
+                <li>Fundo modificado: <b>+ R$ 1,00</b></li>
+            </ul>
+            <p>Especificações:</p>
+            <ul>
+                <li>Sem NSFW</li>
+                <li>Qualquer espécie</li>
+                <li>Qualquer gênero</li>
+            </ul>
+        </section>
+
+        <section class="inside-container">
+            <h3>Show your goods</h3>
+            <div class="images toShow">
+                <img class="imgcmm" src="../img/cmm/2.png" alt="" width="400px">
+            </div>
+            <p>Valores: </p>
+            <ul>
+                <li><b>R$ 5,00</b></li>
+                <li>Fundo com cor sólida: <b>+ R$ 0,00</b></li>
+                <li>Fundo com cor personalizada: <b>+ R$ 1,00</b></li>
+                <li>ALT NSFW: <b>+ R$ 0,50</b></li>
+            </ul>
+            <p>Especificações: </p>
+            <ul>
+                <li>Qualquer espécie</li>
+                <li>QUalquer gênero</li>
+                <li>Permitido a adição de cauda, acessórios, vestimenta, etc</li>
+            </ul>
+        </section>
+
+        <section class="inside-container">
+            <h3>Pride Face</h3>
+            <div class="images toShow">
+                <img class="imgcmm" src="../img/cmm/3.png" alt="" width="400px">
+            </div>
+                <p>Preços: </p>
+            <ul>
+                <li><b>R$ 5,00</b></li>
+                <li>Fundo com cor sólida: <b>+ R$ 0,00</b></li>
+                <li>Fundo personalizado: <b>+ R$ 2,50</b></li>
+            </ul>
+            <p>Especificações:</p>
+            <ul>
+                <li>Qualquer espécie</li>
+                <li>Qualquer gênero</li>
+                <li>Qualquer badeira e em qualquer posição</li>
+                <li>Sombreameto opcional</li>
+            </ul>
+        </section>
+
+    </section>
+
+        <nav>
+            <a href="#top">^ Voltar ao topo ^</a>
+        </nav>
+
+        <footer>
+            <div class="foot">
+                <div class="langDiv">
+                    <nav class="lang">
+                        <a class="there">Português brasileiro</a>
+                        <a class="lang" href="../en-us/prices.html">English</a>
+                    </nav>
+                </div>
+                <div>
+                    <p>* Todos os direitos reservados *<br>* Todas as coisas mostradas aqui são minha propiedade, por favor não roube minha arte *<br>* Fanarts são permitidas, tanto SFW quanto NSFW *<br>* Se você deseja fazer uma fanart minha, por favor me marque ou mande na DM *</p>
+                </div>
+            </div>
+        </footer>
+        <script src="../checkPrice.js"></script>
+</body>
+</html>

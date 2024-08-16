@@ -1,0 +1,33 @@
+What things are done?
+
+-------------
+General
+
+🛠️ decoration
+✅ style
+✅ organization
+
+-------------
+pt-br
+
+✅ home
+❌ social
+✅ prices
+❌ finished commissions
+❌ arts
+❌ footer
+
+
+---------------
+en-us
+
+✅ home
+🛠️ social
+✅ prices
+❌ finished commissions
+🛠️ arts
+✅ footer
+
+---------------
+
+progress: 50%
