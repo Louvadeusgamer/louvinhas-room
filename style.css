@@ -243,9 +243,7 @@ footer {
     
 }
 
-.images.toShow {
-    align-items: center;
-}
+
 
 .inside-container.calc {
     p {
@@ -336,7 +334,7 @@ footer {
     }
 
     .images.toShow {
-        align-items: none;
+        max-width: 400px;
     }
 
     .container {
