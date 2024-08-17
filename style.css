@@ -334,6 +334,11 @@ footer {
             padding-top: 12px;
         }
     }
+
+    .images.toShow {
+        align-items: none;
+    }
+
     .container {
         margin: 12px 25px 12px 25px;
         p, span {
