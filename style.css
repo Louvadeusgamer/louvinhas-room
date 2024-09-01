@@ -316,6 +316,11 @@ footer {
     }
 }
 
+.off {
+    border-color: #700000;
+    background-color: #a00000;
+}
+
 /* Mobile port */
 
 @media (max-width: 1000px) {
