@@ -46,17 +46,17 @@ header {
     background-color: rgb(25, 25, 25);
     border: 3px dotted pink;
     border-radius: 100px;
-    p {
-        text-align: center;
-    }
-    .title {
-        background: none;
-        border: none;
-    }
-    .title:hover {
-        background: none;
-        color: white;
-    }
+}
+header p {
+    text-align: center;
+}
+header .title {
+    background: none;
+    border: none;
+}
+header .title:hover {
+    background: none;
+    color: white;
 }
 
 
