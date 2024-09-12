@@ -270,6 +270,7 @@ function NSFWY() {
 }
 
 // function updateTexts()
+
 function updateTexts() {
 
     if (shader === 0) {

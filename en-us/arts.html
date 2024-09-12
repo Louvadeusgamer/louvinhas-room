@@ -62,9 +62,11 @@
     <section class="container" id="0">
         <h1>Common arts</h1>
 
-        <div>
-            <h2>2024</h2>
-
+        <div class="show" id="0-2024">
+            <div>
+                <h2>2024</h2>
+                <button onclick="colapse(0, 2024)"><i class="fa-solid fa-eye" style="color: #ffffff;"></i></button>
+            </div>
             <div class="images">
                 <img src="../img/All arts/24 Sem Título_20240628095936.png" alt="">
                 <span>Sleeping with my kitties ❤</span>
@@ -134,7 +136,7 @@
             
         </div>
 
-        <div>
+        <div class="hide" id="0-2023">
             <h2>2023</h2>
             <div class="images">
                 <img src="../img/All arts/36 Sem Título_20231119100144.png" alt="">
@@ -271,5 +273,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://kit.fontawesome.com/c3b1598b6e.js" crossorigin="anonymous"></script>
+    <script src="../colapseScript.js"></script>
 </body>
 </html>
