@@ -351,6 +351,11 @@ footer {
     display: none;
 }
 
+.yearTitle {
+    display: flex;
+    flex-direction: row;
+}
+
 /* Mobile port */
 
 @media (max-width: 1000px) {
