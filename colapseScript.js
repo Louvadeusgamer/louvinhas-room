@@ -5,7 +5,7 @@ const items = [
     }
 ]
 let showing = [
-    "0" = {
+    i0 = {
         y2024: true,
         y2023: false
     }
