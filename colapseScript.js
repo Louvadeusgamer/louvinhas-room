@@ -1,5 +1,5 @@
 const items = [
-    "0" = {
+    i0 = {
         y2024: document.getElementById("0-2024"),
         y2023: document.getElementById("0-2023")
     }
