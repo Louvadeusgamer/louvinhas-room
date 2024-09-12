@@ -10,10 +10,11 @@ let showing = {
         y2023: false
     }
 }
-console.log("test" + items[0].y2024);
+
 
 
 function colapse(item, year) {
+    console.log("test" + items[0].y2024);
     if (year === 2024){
         if (showing[item].y2024) {
             items[item].y2024.classList.replace("show", "hide")
