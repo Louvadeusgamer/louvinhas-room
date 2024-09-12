@@ -10,6 +10,8 @@ let showing = {
         y2023: false
     }
 }
+console.log(items[0].y2024);
+
 
 function colapse(item, year) {
     if (year === 2024){
