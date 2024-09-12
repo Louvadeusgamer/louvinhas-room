@@ -21,7 +21,7 @@ function colapse(item, year) {
             showing[item].y2024[0] = true
         } 
     }
-    if (year === 2023)
+    if (year === 2023) {
         if (showing[item].y2023[0] === true) {
             items[item].y2023[0].classList.replace("show", "hide")
             showing[item].y2023[0] = false
