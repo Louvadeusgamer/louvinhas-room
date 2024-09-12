@@ -12,14 +12,14 @@ let showing = {
 }
 
 function colapse(item, year) {
-    if (year === 2024 && showing[item].y2024) {
+    if (year === 2024 && showing[item].y2024 === true) {
         items[item].y2024.classList.replace("show", "hide")
         showing[item].y2024 = false
     } else if (year === 2024) {
         items[item].y2024.classList.replace("hide", "show")
         showing[item].y2024 = true
     } 
-    if (year === 2023 && showing[item].y2023) {
+    if (year === 2023 && showing[item].y2023 === true) {
         items[item].y2023.classList.replace("show", "hide")
         showing[item].y2023 = false
     } else if (year === 2023) {
