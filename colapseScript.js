@@ -1,13 +1,13 @@
 const items = {
     i0: {
-        y2024: document.getElementById("0-2024"),
-        y2023: document.getElementById("0-2023")
+        y2024: [document.getElementById("0-2024")],
+        y2023: [document.getElementById("0-2023")]
     }
 }
 let showing = {
     i0: {
-        y2024: true, 
-        y2023: false
+        y2024: [true], 
+        y2023: [false]
     }
 }
 
