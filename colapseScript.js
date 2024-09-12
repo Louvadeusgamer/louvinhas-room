@@ -13,21 +13,21 @@ let showing = {
 
 function colapse(item, year) {
     if (year === 2024){
-        if (showing[item].y2024) {
-            items[item].y2024.classList.replace("show", "hide")
-            showing[item].y2024 = false
+        if (showing[item].y2024[0]) {
+            items[item].y2024[0].classList.replace("show", "hide")
+            showing[item].y2024[0] = false
         } else {
-            items[item].y2024.classList.replace("hide", "show")
-            showing[item].y2024 = true
+            items[item].y2024[0].classList.replace("hide", "show")
+            showing[item].y2024[0] = true
         } 
     }
     if (year === 2023)
-        if (showing[item].y2023 === true) {
-            items[item].y2023.classList.replace("show", "hide")
-            showing[item].y2023 = false
+        if (showing[item].y2023[0] === true) {
+            items[item].y2023[0].classList.replace("show", "hide")
+            showing[item].y2023[0] = false
         } else {
-            items[item].y2023.classList.replace("hide", "show")
-            showing[item].y2023 = true
+            items[item].y2023[0].classList.replace("hide", "show")
+            showing[item].y2023[0] = true
         }
     } 
 }
