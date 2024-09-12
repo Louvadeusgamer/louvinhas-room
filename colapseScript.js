@@ -10,7 +10,7 @@ let showing = {
         y2023: false
     }
 }
-console.log(items[0].y2024);
+console.log("test" + items[0].y2024);
 
 
 function colapse(item, year) {
