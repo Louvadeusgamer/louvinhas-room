@@ -354,6 +354,7 @@ footer {
 .yearTitle {
     display: flex;
     flex-direction: row;
+    align-content: center;
 }
 
 /* Mobile port */
