@@ -1,367 +1,332 @@
 // Variáveis Select Type
 
 let type = 0;
-const type0 = document.getElementById("0");
-const type1 = document.getElementById("1");
-const type2 = document.getElementById("2");
-const type3 = document.getElementById("3");
-const typecustom = document.getElementById("custom")
-const typeabraca = document.getElementById("abraca")
-const typegoods = document.getElementById("goods")
-const typepride = document.getElementById("pride")
+const typesTab = [
+    document.getElementById("0"),
+    document.getElementById("1"),
+    document.getElementById("2"),
+    document.getElementById("3"),
+    document.getElementById("4")
+]
+const types = [
+    document.getElementById("custom"),
+    document.getElementById("abraca"),
+    document.getElementById("goods"),
+    document.getElementById("pride"),
+    document.getElementById("halloween")
+]
 
 // Botões Select Type
 
-function custom() {
-    if (type !== 0) {
-        type0.classList.replace("false", "true")
-        type1.classList.replace("true", "false")
-        type2.classList.replace("true", "false")
-        type3.classList.replace("true", "false")
+function tab(n) {
+    if (n === 0 && n !== type) {
+        typesTab[0].classList.replace("false", "true")
+        typesTab[1].classList.replace("true", "false")
+        typesTab[2].classList.replace("true", "false")
+        typesTab[3].classList.replace("true", "false")
+        typesTab[4].classList.replace("true", "false")
         type = 0
-        replaceType()
     }
-}
-
-function abraca() {
-    if (type !== 1) {
-        type0.classList.replace("true", "false")
-        type1.classList.replace("false", "true")
-        type2.classList.replace("true", "false")
-        type3.classList.replace("true", "false")
+    if (n === 1 && n !== type) {
+        typesTab[0].classList.replace("true", "false")
+        typesTab[1].classList.replace("false", "true")
+        typesTab[2].classList.replace("true", "false")
+        typesTab[3].classList.replace("true", "false")
+        typesTab[4].classList.replace("true", "false")
         type = 1
-        replaceType()
     }
-}
-
-function goods() {
-    if (type !== 2) {
-        type0.classList.replace("true", "false")
-        type1.classList.replace("true", "false")
-        type2.classList.replace("false", "true")
-        type3.classList.replace("true", "false")
+    if (n === 2 && n !== type) {
+        typesTab[0].classList.replace("true", "false")
+        typesTab[1].classList.replace("true", "false")
+        typesTab[2].classList.replace("false", "true")
+        typesTab[3].classList.replace("true", "false")
+        typesTab[4].classList.replace("true", "false")
         type = 2
-        replaceType()
     }
-}
-
-function pride() {
-    if (type !== 3) {
-        type0.classList.replace("true", "false")
-        type1.classList.replace("true", "false")
-        type2.classList.replace("true", "false")
-        type3.classList.replace("false", "true")
+    if (n === 3 && n !== type) {
+        typesTab[0].classList.replace("true", "false")
+        typesTab[1].classList.replace("true", "false")
+        typesTab[2].classList.replace("true", "false")
+        typesTab[3].classList.replace("false", "true")
+        typesTab[4].classList.replace("true", "false")
         type = 3
-        replaceType()
+    }
+    if (n === 4 && n !== type) {
+        typesTab[0].classList.replace("true", "false")
+        typesTab[1].classList.replace("true", "false")
+        typesTab[2].classList.replace("true", "false")
+        typesTab[3].classList.replace("true", "false")
+        typesTab[4].classList.replace("false", "true")
+        type = 4
+    }
+    replaceTab()
+}
+
+function replaceTab() {
+    for (let i = 0; i < types.length; i++) {
+        if (i === type) {
+            types[i].style.display = "inline"
+        } else {
+            types[i].style.display = "none"
+        }
     }
 }
 
-// Functions Select Type
+const pricesCustom0 = [0, 2.5]
+const pricesCustom1 = [5, 7.5, 10]
+const pricesCustom2 = [0, 1]
+const pricesCustom3 = 0.5
+const pricesCustom4 = 0.25
+const pricesCustom5 = [0, 2]
 
-function replaceType() {
-    if (type === 0) {
-        typecustom.style.display = "inline"
-        typeabraca.style.display = "none"
-        typegoods.style.display = "none"
-        typepride.style.display = "none"
-    } else if (type === 1) {
-        typecustom.style.display = "none"
-        typeabraca.style.display = "inline"
-        typegoods.style.display = "none"
-        typepride.style.display = "none"
-    } else if (type === 2) {
-        typecustom.style.display = "none"
-        typeabraca.style.display = "none"
-        typegoods.style.display = "inline"
-        typepride.style.display = "none"
-    } else if (type === 3 ) {
-        typecustom.style.display = "none"
-        typeabraca.style.display = "none"
-        typegoods.style.display = "none"
-        typepride.style.display = "inline"
-    }
-}
+const pricesAbraca0 = [5, 7.5]
+const pricesAbraca1 = [0, 0, 1]
 
-// Variáveis YCH Abraçadinhos
+const pricesGoods0 = [5, 6]
+const pricesGoods1 = [0, 0.5]
 
-let OCs1 = 1;
-let BG1 = 0;
-let BG1Text = "no";
-let priceAbraca = 0;
+const pricesPride0 = [5, 7.5]
 
-// Botôes Abraçadinhos
+const pricesHalloween0 = [7.5, 8.5]
+const pricesHalloween1 = [0, 2]
+const pricesHalloween2 = 0.5
+const pricesHalloween3 = [0, 0.5]
 
-function OCsM1() {
-    if (OCs1 === 2) {
-        OCs1 = 1
-    }
-    updateTexts()
-}
-
-function OCsP1() {
-    if (OCs1 === 1) {
-        OCs1 = 2
-    }
-    updateTexts()
-}
-
-function BGM1() {
-    if (BG1 === 1) {
-        BG1 = 0
-    }
-    updateTexts()
-}
-
-function BGP1() {
-    if (BG1 === 0) {
-        BG1 = 1
-    }
-    updateTexts()
-}
-
-// VAriáveis Show Your Goods
-
-let BG2 = 0;
-let BG2Text = "No"
-let NSFW2 = 0;
-let NSFW2Text = "No"
-let priceGoods = 0
-
-// Botões Show Your Goods
-
-function BGM2() {
-    if (BG2 === 1) {
-        BG2 = 0
-    }
-    updateTexts()
-}
-
-function BGP2() {
-    if (BG2 === 0) {
-        BG2 = 1
-    }
-    updateTexts()
-}
-
-function NSFWM2() {
-    if (NSFW2 === 1) {
-        NSFW2 = 0
-    }
-    updateTexts()
-}
-
-function NSFWP2() {
-    if (NSFW2 === 0) {
-        NSFW2 = 1
-    }
-    updateTexts()
-}
-
-// Variáveis Pride Face
-
-let BG3 = 0
-let BG3Text = "No"
-let pricePride = 0
-
-// Botôes Pride Face
-
-function BGM3() {
-    if (BG3 === 1) {
-        BG3 = 0
-    }
-    updateTexts()
-}
-
-function BGP3() {
-    if (BG3 === 0) {
-        BG3 = 1
-    }
-    updateTexts()
-}
-
-// Variáveis Custom
-
-let shader = 0;
-let shaderType = "Flat colors";
-let size = 0;
-let sizeType = "Headshot";
-let sizePrice = 5;
-let OCs = 1;
-let Alts = 1;
-let NSFW = 0;
-let NSFWText = "No";
-let priceCustom = 0;
-let priceWAlts = 0;
-let priceWOCs = 0;
-let priceTotal = 0;
 const currency = "R$ "
 
+let indexCustom = [0, 0, 0, 0, 0, 0]
+let indexAbraca = [0, 0]
+let indexgoods = [0, 0]
+let IndexPride = 0
+let indexHalloween = [0, 0, 0, 0]
 
-const headshotPrice = 5;
-const halfPrice = 7.5;
-const fullPrice = 10;
+function changeValue(tab, toChange, value) {
 
-// Botões Custom
-
-function shaderM() {
-    if (shader === 1) {
-        shader = 0;
+    if (tab === 0) { // custom
+        if (toChange === 0) { // qualidade 
+            if (value === false) { 
+                document.getElementById("flatColor").classList.replace("no", "yes")
+                document.getElementById("Shader").classList.replace("yes", "no")
+                indexCustom[0] = 0
+            } else {
+                document.getElementById("flatColor").classList.replace("yes", "no")
+                document.getElementById("Shader").classList.replace("no", "yes")
+                indexCustom[0] = 1
+            }
+        }
+        if (toChange === 1) {
+            if (value === 0) {
+                document.getElementById("HS").classList.replace("no", "yes")
+                document.getElementById("HB").classList.replace("yes", "no")
+                document.getElementById("FB").classList.replace("yes", "no")
+                indexCustom[1] = 0
+            }
+            if (value === 1) {
+                document.getElementById("HS").classList.replace("yes", "no")
+                document.getElementById("HB").classList.replace("no", "yes")
+                document.getElementById("FB").classList.replace("yes", "no")
+                indexCustom[1] = 1
+            }
+            if (value === 2) {
+                document.getElementById("HS").classList.replace("yes", "no")
+                document.getElementById("HB").classList.replace("yes", "no")
+                document.getElementById("FB").classList.replace("no", "yes")
+                indexCustom[1] = 2
+            }
+        }
+        if (toChange === 2) {
+            if (value === false) {
+                document.getElementById("NL").classList.replace("no", "yes")
+                document.getElementById("PL").classList.replace("yes", "no")
+                indexCustom[2] = 0
+            } else {
+                document.getElementById("NL").classList.replace("yes", "no")
+                document.getElementById("PL").classList.replace("no", "yes")
+                indexCustom[2] = 1
+            }
+        }
+        if (toChange === 3) {
+            if (indexCustom[3] <= 0 && value === -1) {} else {
+                indexCustom[3] += value
+                document.getElementById("ocsCustomIndex").innerHTML = indexCustom[3] + 1
+            }
+        }
+        if (toChange === 4) {
+            if (indexCustom[4] <= 0 && value === -1) {} else {
+                indexCustom[4] += value
+                document.getElementById("altsCustomIndex").innerHTML = indexCustom[4] + 1
+            }
+        }
+        if (toChange === 5) {
+            if (value === false) {
+                document.getElementById("nsfwCN").classList.replace("no", "yes")
+                document.getElementById("nsfwCY").classList.replace("yes", "no")
+                indexCustom[5] = 0
+            } else {
+                document.getElementById("nsfwCN").classList.replace("yes", "no")
+                document.getElementById("nsfwCY").classList.replace("no", "yes")
+                indexCustom[5] = 1
+            }
+        }
+        calc(0)
     }
-    updateTexts()
+
+    if (tab === 1) { // abraçadinhos
+        if (toChange === 0) {
+            if (value === 0) {
+                document.getElementById("ocsAbraca1").classList.replace("no", "yes")
+                document.getElementById("ocsAbraca2").classList.replace("yes", "no")
+                indexAbraca[0] = 0
+            } else {
+                document.getElementById("ocsAbraca1").classList.replace("yes", "no")
+                document.getElementById("ocsAbraca2").classList.replace("no", "yes")
+                indexAbraca[0] = 1
+            }
+        }
+        if (toChange === 1) {
+            if (value === 0) {
+                document.getElementById("CSAbraca").classList.replace("no", "yes")
+                document.getElementById("ImgAbraca").classList.replace("yes", "no")
+                document.getElementById("BGAbraca").classList.replace("yes", "no")
+                indexAbraca[1] = 0
+            } else if (value === 1) {
+                document.getElementById("CSAbraca").classList.replace("yes", "no")
+                document.getElementById("ImgAbraca").classList.replace("no", "yes")
+                document.getElementById("BGAbraca").classList.replace("yes", "no")
+                indexAbraca[1] = 1
+            } else {
+                document.getElementById("CSAbraca").classList.replace("yes", "no")
+                document.getElementById("ImgAbraca").classList.replace("yes", "no")
+                document.getElementById("BGAbraca").classList.replace("no", "yes")
+                indexAbraca[1] = 2
+            }
+        }
+        calc(1)
+    }
+
+    if (tab === 2) { // show your goods
+        if (toChange === 0) {
+            if (value === 0) {
+                document.getElementById("CSGoods").classList.replace("no", "yes")
+                document.getElementById("BGGoods").classList.replace("yes", "no")
+                indexgoods[0] = 0
+            } else {
+                document.getElementById("CSGoods").classList.replace("yes", "no")
+                document.getElementById("BGGoods").classList.replace("no", "yes")
+                indexgoods[0] = 1
+            }
+        }
+        if (toChange === 1) {
+            if (value === 0) {
+                document.getElementById("nsfwGN").classList.replace("no", "yes")
+                document.getElementById("nsfwGY").classList.replace("yes", "no")
+                indexgoods[1] = 0
+            } else {
+                document.getElementById("nsfwGN").classList.replace("yes", "no")
+                document.getElementById("nsfwGY").classList.replace("no", "yes")
+                indexgoods[1] = 1
+            }
+        }
+        calc(2)
+    }
+
+    if (tab === 3) { // pride face
+        if (value === 0) {
+            document.getElementById("CSPride").classList.replace("no", "yes")
+            document.getElementById("BGPride").classList.replace("yes", "no")
+            IndexPride = 0
+        } else {
+            document.getElementById("CSPride").classList.replace("yes", "no")
+            document.getElementById("BGPride").classList.replace("no", "yes") 
+            IndexPride = 1
+        }
+        calc(3)
+    }
+
+    if (tab === 4) {
+        if (toChange === 0) {
+            if (value === 0) {
+                document.getElementById("PFHN").classList.replace("no", "yes")
+                document.getElementById("PFHY").classList.replace("yes", "no")
+                indexHalloween[0] = 0
+            } else {
+                document.getElementById("PFHN").classList.replace("yes", "no")
+                document.getElementById("PFHY").classList.replace("no", "yes")
+                indexHalloween[0] = 1
+            }
+        }
+        if (toChange === 1) {
+            if (value === 0) {
+                document.getElementById("ALTNSFWN").classList.replace("no", "yes")
+                document.getElementById("ALTNSFWY").classList.replace("yes", "no")
+                indexHalloween[1] = 0
+            } else {
+                document.getElementById("ALTNSFWN").classList.replace("yes", "no")
+                document.getElementById("ALTNSFWY").classList.replace("no", "yes")
+                indexHalloween[1] = 1
+            }
+        }
+        if (toChange === 2) {
+            if (value === 0 && indexHalloween[2] >= 1) {
+                indexHalloween[2]--
+            }
+            if (value === 1) {
+                indexHalloween[2]++
+            }
+            document.getElementById("suitsH").innerHTML = indexHalloween[2] + 1
+        }
+        if (toChange === 3) {
+            if (value === 0) {
+                document.getElementById("FCH").classList.replace("no", "yes")
+                document.getElementById("SH").classList.replace("yes", "no")
+                indexHalloween[3] = 0
+            } else {
+                document.getElementById("FCH").classList.replace("yes", "no")
+                document.getElementById("SH").classList.replace("no", "yes") 
+                indexHalloween[3] = 1
+            }
+        }
+        calc(4)
+    }
 }
 
-function shaderP() {
-    if (shader === 0) {
-        shader = 1
+function calc(tab) {
+    if (tab === 0) {
+        const calcCS1 = pricesCustom0[indexCustom[0]] + pricesCustom1[indexCustom[1]] + pricesCustom2[indexCustom[2]] + pricesCustom5[indexCustom[5]]
+        document.getElementById("totalCalc").innerHTML = currency + calcCS1
+        if (indexCustom[3] !== 0 && indexCustom[4] !== 0) {
+            const calcCS2 = calcCS1 + ( calcCS1 * (indexCustom[3] * pricesCustom3))
+            const price = calcCS2 + (calcCS2 * (indexCustom[4] * pricesCustom4))
+            document.getElementById("totalCalc").innerHTML = currency + price
+        }
+        if (indexCustom[3] !== 0 && indexCustom[4] === 0) {
+            const price = calcCS1 + (calcCS1 * (indexCustom[3] * pricesCustom3))
+            document.getElementById("totalCalc").innerHTML = currency + price
+        }
+        if (indexCustom[3] === 0 && indexCustom[4] !== 0) {
+            const price = calcCS1 + (calcCS1 * (indexCustom[4] * pricesCustom4))
+            document.getElementById("totalCalc").innerHTML = currency + price
+        }
     }
-    updateTexts()
-}
-
-function sizeM() {
-    if (size > 0) {
-        size -= 1
+    if (tab === 1) {
+        const price = pricesAbraca0[indexAbraca[0]] + pricesAbraca1[indexAbraca[1]]
+        document.getElementById("totalCalc1").innerHTML = currency + price
     }
-    updateTexts()
-}
-
-function sizeP() {
-    if (size < 2) {
-        size += 1
+    if (tab === 2) {
+        const price = pricesGoods0[indexgoods[0]] + pricesGoods1[indexgoods[1]]
+        document.getElementById("totalCalc2").innerHTML = currency + price
     }
-    updateTexts()
-}
-
-function OCsM() {
-    if (OCs > 0) {
-        OCs -= 1
+    if (tab === 3) {
+        const price = pricesPride0[IndexPride]
+        document.getElementById("totalCalc3").innerHTML = currency + price
     }
-    updateTexts()
-}
-
-function OCsP() {
-    OCs += 1
-    updateTexts()
-}
-
-function AltsM() {
-    if (Alts > 0) {
-        Alts -= 1
+    if (tab === 4) {
+        const step1 = pricesHalloween0[indexHalloween[0]] + pricesHalloween1[indexHalloween[1]] + pricesHalloween3[indexHalloween[3]]
+        if (indexHalloween[2] > 0) {
+            const price = step1 + (step1 * (pricesHalloween2 * indexHalloween[2]))
+            document.getElementById("totalCalc4").innerHTML = currency + price
+        } else {
+            document.getElementById("totalCalc4").innerHTML = currency + step1
+        }
     }
-    updateTexts()
-}
-
-function AltsP() {
-    Alts += 1
-    updateTexts()
-}
-
-function NSFWN() {
-    if (NSFW === 1) {
-        NSFW = 0
-    }
-    updateTexts()
-}
-
-function NSFWY() {
-    if (NSFW === 0) {
-        NSFW = 1
-    }
-    updateTexts()
-}
-
-// function updateTexts()
-
-function updateTexts() {
-
-    if (shader === 0) {
-        shaderType = "Flat colors"
-    } else if (shader === 1) {
-        shaderType = "Shadered"
-    };
-
-    if (size === 0) {
-        sizeType = "Headshot"
-        sizePrice = headshotPrice
-    } else if (size === 1) {
-        sizeType = "Half body"
-        sizePrice = halfPrice
-    } else {
-        sizeType = "Full body"
-        sizePrice = fullPrice
-    }
-
-    if (NSFW === 0) {
-        NSFWText = "No"
-    } else {
-        NSFWText = "Yes"
-    }
-
-    if (BG1 === 0) {
-        BG1Text = "No"
-    } else {
-        BG1Text = "Yes"
-    }
-
-    if (BG2 === 0) {
-        BG2Text = "No"
-    } else {
-        BG2Text = "Yes"
-    }
-
-    if (NSFW2 === 0) {
-        NSFW2Text = "No"
-    } else {
-        NSFW2Text = "Yes"
-    }
-
-    if (BG3 === 0) {
-        BG3Text = "No"
-    } else {
-        BG3Text = "Yes"
-    }
-
-    // Price math Custom
-    priceCustom = ((shader * 2.5) + (sizePrice) + (NSFW * 2))
-    document.getElementById("totalCalc").innerHTML = currency + priceCustom
-    if (OCs > 1 && Alts === 1) {
-    priceWOCs = priceCustom + (priceCustom * ((OCs - 1) * 0.5))
-    document.getElementById("totalCalc").innerHTML = currency + priceWOCs
-    }
-    if (OCs === 1 && Alts > 1) {
-        priceWAlts = priceCustom + (priceCustom * ((Alts - 1) * 0.25))
-        document.getElementById("totalCalc").innerHTML = currency + priceWAlts
-    }
-    if (OCs > 1 && Alts > 1) {
-        priceWOCs = priceCustom + (priceCustom * ((OCs - 1) * 0.5))
-        priceWAlts = priceWOCs + (priceWOCs * ((Alts - 1) * 0.25))
-        document.getElementById("totalCalc").innerHTML = currency + priceWAlts
-    }
-
-    // Price math abraçadinhos
-    priceAbraca = 5 + ((OCs1 - 1) * 2.5) + BG1
-    document.getElementById("totalCalc1").innerHTML = currency + priceAbraca
-
-    // Price math Show Your Goods
-    priceGoods = 5 + BG2 + (NSFW2 * 0.5)
-    document.getElementById("totalCalc2").innerHTML = currency + priceGoods
-
-    // Pride Face math
-    pricePride = 5 + (BG3 * 2.5)
-    document.getElementById("totalCalc3").innerHTML = currency + pricePride
-    
-
-    // Custom texts
-    document.getElementById("shader").innerHTML = shaderType
-    document.getElementById("size").innerHTML = sizeType
-    document.getElementById("OCs").innerHTML = OCs
-    document.getElementById("Alts").innerHTML = Alts
-    document.getElementById("NSFW").innerHTML = NSFWText
-    // Abraçadinhos texts
-    document.getElementById("OCs1").innerHTML = OCs1
-    document.getElementById("BG1").innerHTML = BG1Text
-    // Show Your Goods texts
-    document.getElementById("BG2").innerHTML = BG2Text
-    document.getElementById("NSFW2").innerHTML = NSFW2Text
-    // Pride Face texts
-    document.getElementById("BG3").innerHTML = BG3Text
 }
