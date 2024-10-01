@@ -60,7 +60,6 @@ header {
 }
 
 
-
 nav {
     display: flex;
     justify-content: space-around;
@@ -244,7 +243,9 @@ footer {
     
 }
 
-
+.images.toShow {
+    align-items: center;
+}
 
 .inside-container.calc {
     p {
@@ -259,15 +260,15 @@ footer {
         }
         button {
             border: 0;
-            padding: 10px;
+            padding: 10px 20px 10px 20px;
             margin: 7px -6px 0 -6px;
             background-color: lightgray;
             border: 1px solid;
         }
-        button:hover:not(.true) {
+        button:hover:not(.true, .yes) {
             background-color: greenyellow;
         }
-        button:hover:not(.true, .false) {
+        button:hover:not(.true, .false, .yes) {
             background-color: gray;
         }
         .R {
@@ -277,6 +278,12 @@ footer {
         .L {
             border-radius: 0 10px 10px 0;
             border: 0 0 0 1px
+        }
+        .yes {
+            background-color: lightgreen;
+        }
+        .yes:hover {
+            background-color: lightgreen;
         }
     }
     h3 {
@@ -307,6 +314,10 @@ footer {
     display: none;
 }
 
+#halloween {
+    display: none;
+}
+
 .calc.type {
     .true {
         background-color: lightgreen;
@@ -320,41 +331,6 @@ footer {
 .off {
     border-color: #700000;
     background-color: #a00000;
-}
-.off:hover {
-    border-color: #700000;
-    background-color: #a00000;
-}
-
-.new {
-    border: 1px greenyellow solid;
-    background-color: green;
-    border-radius: 1px 2px 20px 2px;
-}
-
-.container.sorteio {
-    border: #00ff00 2px solid;
-    border-color: #00ff00 #ffff00 #ffff00 #00ff00;
-    border-radius: 0 24px 24px 24px;
-    background: linear-gradient(#00a000, #008000);
-    p, ul, li, a {
-        color: white;
-        text-align: left;
-    }
-    h1 {
-        color: white;
-        text-align: center;
-    }
-}
-
-.hide {
-    display: none;
-}
-
-.yearTitle {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
 }
 
 /* Mobile port */
@@ -373,11 +349,6 @@ footer {
             padding-top: 12px;
         }
     }
-
-    .images.toShow {
-        max-width: 250px;
-    }
-
     .container {
         margin: 12px 25px 12px 25px;
         p, span {
@@ -414,5 +385,4 @@ footer {
         text-align: center;
     }
 }
-
 }
