@@ -26,10 +26,11 @@
 
             <div class="calc type">            
                 <p>Tipo de comissão <br>
-                <button id="0" class="true R" onclick="custom()">Custom</button>
-                <button id="1" class="false" onclick="abraca()">YCH Abraçadinhos</button>
-                <button id="2" class="false" onclick="goods()">YCH Show Your Goods</button>
-                <button id="3" class="false L" onclick="pride()">YCH Pride Face</button>
+                <button id="0" class="true R" onclick="tab(0)">Custom</button>
+                <button id="1" class="false" onclick="tab(1)">YCH Abraçadinhos</button>
+                <button id="2" class="false" onclick="tab(2)">YCH Show Your Goods</button>
+                <button id="3" class="false " onclick="tab(3)">YCH Pride Face</button>
+                <button id="4" class="false L" onclick="tab(4)">YCH Halloween</button>
             </p>
             </div>
 
@@ -39,35 +40,38 @@
 
                 <h2>Customizada</h2>
 
-            <p>Qualidade: <br>
-                <button onclick="shaderM()" class="R"><</button> 
-                <span class="calcValue" id="shader">Flat colors</span> 
-                <button onclick="shaderP()" class="L">></button>
-            </p>
+                <p>Qualidade: <br>
+                    <button onclick="changeValue(0, 0, false)" class="yes R" id="flatColor">Flat colors</button>
+                    <button onclick="changeValue(0, 0, true)" class="no L" id="Shader">Shaded</button>
+                </p>
 
-            <p>Tamanho: <br>
-                <button onclick="sizeM()" class="R"><</button> 
-                <span class="calcValue" id="size">Headshot</span> 
-                <button onclick="sizeP()" class="L">></button>
-            </p>
+                <p>Tamanho: <br>
+                    <button onclick="changeValue(0, 1, 0)" class="yes R" id="HS">Headshot</button>
+                    <button onclick="changeValue(0, 1, 1)" class="no" id="HB">Halfbody</button>
+                    <button onclick="changeValue(0, 1, 2)" class="no L" id="FB">Fullbody</button>
+                </p>
 
-            <p>Quantidade de OCs: <br>
-                <button onclick="OCsM()" class="R">-</button> 
-                <span class="calcValue" id="OCs">1</span>
-                <button onclick="OCsP()" class="L">+</button>
-            </p>
+                <p>Tipo de line: <br>
+                    <button onclick="changeValue(0, 2, false)" class="yes R" id="NL">Normal</button>
+                    <button onclick="changeValue(0, 2, true)" class="no L" id="PL">Pintada</button>
+                </p>
 
-            <p>Quantidade de versões/Alts: <br>
-                <button onclick="AltsM()" class="R">-</button>
-                <span class="calcValue" id="Alts">1</span>
-                <button onclick="AltsP()" class="L">+</button>
-            </p>
+                <p>Quantidade de OCs: <br>
+                    <button onclick="changeValue(0, 3, -1)" class="R">-</button> 
+                    <span id="ocsCustomIndex">1</span>
+                    <button onclick="changeValue(0, 3, 1)" class="L">+</button>
+                </p>
 
-            <p>NSFW? <br>
-                <button onclick="NSFWN()" class="R"><</button>
-                <span class="calcValue" id="NSFW">No</span>
-                <button onclick="NSFWY()" class="L">></button>
-            </p>
+                <p>Quantidade de versões/Alts: <br>
+                    <button onclick="changeValue(0, 4, -1)" class="R">-</button>
+                    <span id="altsCustomIndex">1</span>
+                    <button onclick="changeValue(0, 4, 1)" class="L">+</button>
+                </p>
+
+                <p>NSFW? <br>
+                    <button onclick="changeValue(0, 5, false)" class="yes R" id="nsfwCN">Não</button>
+                    <button onclick="changeValue(0, 5, true)" class="no L" id="nsfwCY">Sim</button>
+                </p>
 
             <h3>Total: <br><span id="totalCalc">R$ 5</span></h3>
             </div>
@@ -76,15 +80,14 @@
                 <h2>YCH: Abraçadinhos</h2>
 
                 <p>Quantos OCs? <br>
-                    <button class="R" onclick="OCsM1()">-</button>
-                    <span class="calcValue" id="OCs1">1</span>
-                    <button class="L" onclick="OCsP1()">+</button>
+                    <button onclick="changeValue(1, 0, 0)" class="R yes" id="ocsAbraca1">1</button>
+                    <button onclick="changeValue(1, 0, 1)" class="L no" id="ocsAbraca2">2</button>
                 </p>
 
-                <p>Fundo peronalizado? (no caso, desenhado) <br>
-                    <button class="R" onclick="BGM1()"><</button>
-                    <span class="calcValue" id="BG1">No</span>
-                    <button class="L" onclick="BGP1()">></button>
+                <p>Tipo de fundo <br>
+                    <button onclick="changeValue(1, 1, 0)" class="R yes" id="CSAbraca">Cor sólida</button>
+                    <button onclick="changeValue(1, 1, 1)" class="no" id="ImgAbraca">Imagem</button>
+                    <button onclick="changeValue(1, 1, 2)" class="L no" id="BGAbraca">Desenhado</button>
                 </p>
 
                 <h3>Total: <br><span id="totalCalc1">R$ 5</span></h3>
@@ -92,16 +95,14 @@
 
             <div id="goods">
                 <h2>YCH Show Your Goods</h2>
-                <p>Fundo personalizado? <br>
-                    <button class="R" onclick="BGM2()"><</button>
-                    <span class="calcValue" id="BG2">No</span>
-                    <button class="L" onclick="BGP2()">></button>
+                <p>Tipo de fundo <br>
+                    <button onclick="changeValue(2, 0, 0)" class="yes R" id="CSGoods">Cor sólida</button>
+                    <button onclick="changeValue(2, 0, 1)" class="no L" id="BGGoods">Desenhado</button>
                 </p>
 
                 <p>Quer versão NSFW? <br>
-                    <button class="R" onclick="NSFWM2()"><</button>
-                    <span class="calcValue" id="NSFW2">No</span>
-                    <button class="L" onclick="NSFWP2()">></button>
+                    <button onclick="changeValue(2, 1, 0)" class="yes R" id="nsfwGN">Não</button>
+                    <button onclick="changeValue(2, 1, 1)" class="no L" id="nsfwGY">Sim</button>
                 </p>
 
                 <h3>Total: <br><span id="totalCalc2">R$ 5</span></h3>
@@ -109,14 +110,44 @@
 
             <div id="pride">
                 <h2>YCH Pride Face</h2>
-                <p>Fundo personalizado? <br>
-                    <button class="R" onclick="BGM3()"><</button>
-                    <span class="calcValue" id="BG3">No</span>
-                    <button class="L" onclick="BGP3()">></button>
+                <p>Tipo de fundo <br>
+                    <button onclick="changeValue(3, 0, 0)" class="yes R" id="CSPride">Cor sólida</button>
+                    <button onclick="changeValue(3, 0, 1)" class="no L" id="BGPride">Desenhado</button>
                 </p>
 
                 <h3>Total: <br><span id="totalCalc3">R$ 5</span></h3>
             </div>
+
+            <div id="halloween">
+                <h2>Halloween YCH</h2>
+                <p>Este YCH estará disponível de 01/10/2024 a 31/10/2024</p>
+
+                <p>Deseja outro rosto para a abóbora? <br>
+                    <button onclick="changeValue(4, 0, 0)" class="yes R" id="PFHN">Não</button>
+                    <button onclick="changeValue(4, 0, 1)" class="no L" id="PFHY">Sim</button>
+                </p>
+
+                <p>Quer uma ALT NSFW? <br>
+                    <button onclick="changeValue(4, 1, 0)" class="yes R" id="ALTNSFWN">Não</button>
+                    <button onclick="changeValue(4, 1, 1)" class="no L" id="ALTNSFWY">Sim</button>
+                </p>
+
+                <p>Quantas roupas que você deseja? <br>
+                    <button onclick="changeValue(4, 2, 0)" class="R">-</button>
+                    <span id="suitsH">1</span>
+                    <button onclick="changeValue(4, 2, 1)" class="L">+</button>
+                </p>
+
+                <p>Qualidade: <br>
+                    <button onclick="changeValue(4, 3, 0)" class="yes R" id="FCH">Flat colors</button>
+                    <button onclick="changeValue(4, 3, 1)" class="no L" id="SH">Sombreado</button>
+                </p>
+
+                <h3>Total: <br><span id="totalCalc4">R$ 7.5</span></h3>
+                
+            </div>
+
+            
 
         </section>
     </section>
