@@ -16,7 +16,33 @@ const types = [
     document.getElementById("halloween")
 ]
 
-// Botões Select Type
+const modelsIMGDisplay = {
+    headShot: {
+        base: document.getElementById("HSModelBase").style,
+        shader: document.getElementById("HSModelS").style,
+        paintedLines: document.getElementById("HSModelPL").style
+    },
+    halfBody: {
+        base: document.getElementById("HBModelBase").style,
+        shader: document.getElementById("HBModelS").style,
+        paintedLines: document.getElementById("HBModelPL").style,
+        NSFW: document.getElementById("HBModelNSFW").style
+    },
+    fullBody: {
+        base: document.getElementById("FBModelBase").style,
+        shader: document.getElementById("FBModelS").style,
+        paintedLines: document.getElementById("FBModelPL").style,
+        NSFW: document.getElementById("FBModelNSFW").style
+    }
+}
+
+const modelsDIVSdisplay = {
+    headShot: document.getElementById("headshot").style,
+    halfBody: document.getElementById("halfbody").style,
+    fullBody: document.getElementById("fullbody").style
+}
+
+
 
 function tab(n) {
     if (n === 0 && n !== type) {
@@ -288,6 +314,7 @@ function changeValue(tab, toChange, value) {
         }
         calc(4)
     }
+    updateModel()
 }
 
 function calc(tab) {
@@ -328,5 +355,49 @@ function calc(tab) {
         } else {
             document.getElementById("totalCalc4").innerHTML = currency + step1
         }
+    }
+}
+
+const updateModel = () => {
+    if (indexCustom[1] === 0) {
+        modelsDIVSdisplay.headShot.display = "flex"
+        modelsDIVSdisplay.halfBody.display = "none"
+        modelsDIVSdisplay.fullBody.display = "none"
+    } else if (indexCustom[1] === 1) {
+        modelsDIVSdisplay.headShot.display = "none"
+        modelsDIVSdisplay.halfBody.display = "flex"
+        modelsDIVSdisplay.fullBody.display = "none"
+    } else if (indexCustom[1] === 2) {
+        modelsDIVSdisplay.headShot.display = "none"
+        modelsDIVSdisplay.halfBody.display = "none"
+        modelsDIVSdisplay.fullBody.display = "flex"
+    }
+
+    if (indexCustom[0] === 0) {
+        modelsIMGDisplay.headShot.shader.display = "none"
+        modelsIMGDisplay.halfBody.shader.display = "none"
+        modelsIMGDisplay.fullBody.shader.display = "none"
+    } else {
+        modelsIMGDisplay.headShot.shader.display = "flex"
+        modelsIMGDisplay.halfBody.shader.display = "flex"
+        modelsIMGDisplay.fullBody.shader.display = "flex"
+    }
+
+    if (indexCustom[2] === 0) {
+        modelsIMGDisplay.headShot.paintedLines.display = "none"
+        modelsIMGDisplay.halfBody.paintedLines.display = "none"
+        modelsIMGDisplay.fullBody.paintedLines.display = "none"
+    } else {
+        modelsIMGDisplay.headShot.paintedLines.display = "flex"
+        modelsIMGDisplay.halfBody.paintedLines.display = "flex"
+        modelsIMGDisplay.fullBody.paintedLines.display = "flex"
+    }
+
+    if (indexCustom[5] === 0) {
+        modelsIMGDisplay.halfBody.NSFW.display = "none"
+        modelsIMGDisplay.fullBody.NSFW.display = "none"
+    } else {
+        modelsIMGDisplay.halfBody.NSFW.display = "flex"
+        modelsIMGDisplay.fullBody.NSFW.display = "flex"
     }
 }

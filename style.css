@@ -333,6 +333,68 @@ footer {
     background-color: #a00000;
 }
 
+
+#customModel {
+    h3 {
+        position: absolute;
+        right: 30.5%;
+        top: 64.3%;
+        border: 1px solid white;
+        border-radius: 10px 10px 0 0;
+        padding: 2px 7px;
+    }
+    img {
+        width: 15%;
+        position: absolute;
+        right: 25%;
+        top: 70%;
+        border: 2px solid white;
+        border-radius: 0 0 24px 24px;
+    } 
+    #headshot {
+        display: flex;
+        #HSModelBase {
+            display: flex;
+        }
+        #HSModelS {
+            display: none;
+        }
+        #HSModelPL {
+            display: none;
+        }
+    }
+    #halfbody {
+        display: none;
+        #HBModelBase {
+            display: flex;
+        }
+        #HBModelS {
+            display: none;
+        }
+        #HBModelPL {
+            display: none;
+        }
+        #HBModelNSFW {
+            display: none;
+        }
+    }
+    #fullbody {
+        display: none;
+        #FBModelBase {
+            display: flex;
+        }
+        #FBModelS {
+            display: none;
+        }
+        #FBModelPL {
+            display: none;
+        }
+        #FBModelNSFW {
+            display: none;
+        }
+    }
+}
+
 /* Mobile port */
 
 @media (max-width: 1000px) {
@@ -384,5 +446,8 @@ footer {
         flex-direction: column;
         text-align: center;
     }
+}
+#customModel {
+    display: none;
 }
 }
