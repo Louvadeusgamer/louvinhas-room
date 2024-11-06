@@ -126,6 +126,56 @@ let indexgoods = [0, 0]
 let IndexPride = 0
 let indexHalloween = [0, 0, 0, 0]
 
+let customDiscount = [true, 0.05, 0.15]
+const customDoc = document.getElementById("customCalcDisc")
+if (customDiscount[0]) {
+    customDoc.style.display = "flex"
+}
+
+const updateModel = () => {
+    if (indexCustom[1] === 0) {
+        modelsDIVSdisplay.headShot.display = "flex"
+        modelsDIVSdisplay.halfBody.display = "none"
+        modelsDIVSdisplay.fullBody.display = "none"
+    } else if (indexCustom[1] === 1) {
+        modelsDIVSdisplay.headShot.display = "none"
+        modelsDIVSdisplay.halfBody.display = "flex"
+        modelsDIVSdisplay.fullBody.display = "none"
+    } else if (indexCustom[1] === 2) {
+        modelsDIVSdisplay.headShot.display = "none"
+        modelsDIVSdisplay.halfBody.display = "none"
+        modelsDIVSdisplay.fullBody.display = "flex"
+    }
+
+    if (indexCustom[0] === 0) {
+        modelsIMGDisplay.headShot.shader.display = "none"
+        modelsIMGDisplay.halfBody.shader.display = "none"
+        modelsIMGDisplay.fullBody.shader.display = "none"
+    } else {
+        modelsIMGDisplay.headShot.shader.display = "flex"
+        modelsIMGDisplay.halfBody.shader.display = "flex"
+        modelsIMGDisplay.fullBody.shader.display = "flex"
+    }
+
+    if (indexCustom[2] === 0) {
+        modelsIMGDisplay.headShot.paintedLines.display = "none"
+        modelsIMGDisplay.halfBody.paintedLines.display = "none"
+        modelsIMGDisplay.fullBody.paintedLines.display = "none"
+    } else {
+        modelsIMGDisplay.headShot.paintedLines.display = "flex"
+        modelsIMGDisplay.halfBody.paintedLines.display = "flex"
+        modelsIMGDisplay.fullBody.paintedLines.display = "flex"
+    }
+
+    if (indexCustom[5] === 0) {
+        modelsIMGDisplay.halfBody.NSFW.display = "none"
+        modelsIMGDisplay.fullBody.NSFW.display = "none"
+    } else {
+        modelsIMGDisplay.halfBody.NSFW.display = "flex"
+        modelsIMGDisplay.fullBody.NSFW.display = "flex"
+    }
+}
+
 function changeValue(tab, toChange, value) {
 
     if (tab === 0) { // custom
@@ -317,23 +367,50 @@ function changeValue(tab, toChange, value) {
     updateModel()
 }
 
+function applyDiscount(value) {
+    if (customDiscount[0] === true) {
+        if (value < 20) {
+            value -= value * customDiscount[1]
+        } else {
+            value -= value * customDiscount[2]
+        }
+        return value
+    }
+}
+
 function calc(tab) {
     if (tab === 0) {
-        const calcCS1 = pricesCustom0[indexCustom[0]] + pricesCustom1[indexCustom[1]] + pricesCustom2[indexCustom[2]] + pricesCustom5[indexCustom[5]]
-        document.getElementById("totalCalc").innerHTML = currency + calcCS1
+        let calcCS1 = pricesCustom0[indexCustom[0]] + pricesCustom1[indexCustom[1]] + pricesCustom2[indexCustom[2]] + pricesCustom5[indexCustom[5]]
+        
         if (indexCustom[3] !== 0 && indexCustom[4] !== 0) {
             const calcCS2 = calcCS1 + ( calcCS1 * (indexCustom[3] * pricesCustom3))
-            const price = calcCS2 + (calcCS2 * (indexCustom[4] * pricesCustom4))
+            let price = calcCS2 + (calcCS2 * (indexCustom[4] * pricesCustom4))
+            if (customDiscount[0]) {
+                price = applyDiscount(price)
+            }
+            console.log(price)
             document.getElementById("totalCalc").innerHTML = currency + price
-        }
-        if (indexCustom[3] !== 0 && indexCustom[4] === 0) {
-            const price = calcCS1 + (calcCS1 * (indexCustom[3] * pricesCustom3))
+        } else if (indexCustom[3] !== 0 && indexCustom[4] === 0) {
+            let price = calcCS1 + (calcCS1 * (indexCustom[3] * pricesCustom3))
+            
+            if (customDiscount[0]) {
+                price = applyDiscount(price)
+            }
             document.getElementById("totalCalc").innerHTML = currency + price
-        }
-        if (indexCustom[3] === 0 && indexCustom[4] !== 0) {
-            const price = calcCS1 + (calcCS1 * (indexCustom[4] * pricesCustom4))
+        } else if (indexCustom[3] === 0 && indexCustom[4] !== 0) {
+            let price = calcCS1 + (calcCS1 * (indexCustom[4] * pricesCustom4))
+            
+            if (customDiscount[0]) {
+                price = applyDiscount(price)
+            }
             document.getElementById("totalCalc").innerHTML = currency + price
+        } else if (indexCustom[3] === 0 && indexCustom[4] === 0){
+            if (customDiscount[0]) {
+                calcCS1 = applyDiscount(calcCS1)
+                document.getElementById("totalCalc").innerHTML = currency + calcCS1
+            }
         }
+        
     }
     if (tab === 1) {
         const price = pricesAbraca0[indexAbraca[0]] + pricesAbraca1[indexAbraca[1]]
@@ -358,46 +435,5 @@ function calc(tab) {
     }
 }
 
-const updateModel = () => {
-    if (indexCustom[1] === 0) {
-        modelsDIVSdisplay.headShot.display = "flex"
-        modelsDIVSdisplay.halfBody.display = "none"
-        modelsDIVSdisplay.fullBody.display = "none"
-    } else if (indexCustom[1] === 1) {
-        modelsDIVSdisplay.headShot.display = "none"
-        modelsDIVSdisplay.halfBody.display = "flex"
-        modelsDIVSdisplay.fullBody.display = "none"
-    } else if (indexCustom[1] === 2) {
-        modelsDIVSdisplay.headShot.display = "none"
-        modelsDIVSdisplay.halfBody.display = "none"
-        modelsDIVSdisplay.fullBody.display = "flex"
-    }
 
-    if (indexCustom[0] === 0) {
-        modelsIMGDisplay.headShot.shader.display = "none"
-        modelsIMGDisplay.halfBody.shader.display = "none"
-        modelsIMGDisplay.fullBody.shader.display = "none"
-    } else {
-        modelsIMGDisplay.headShot.shader.display = "flex"
-        modelsIMGDisplay.halfBody.shader.display = "flex"
-        modelsIMGDisplay.fullBody.shader.display = "flex"
-    }
 
-    if (indexCustom[2] === 0) {
-        modelsIMGDisplay.headShot.paintedLines.display = "none"
-        modelsIMGDisplay.halfBody.paintedLines.display = "none"
-        modelsIMGDisplay.fullBody.paintedLines.display = "none"
-    } else {
-        modelsIMGDisplay.headShot.paintedLines.display = "flex"
-        modelsIMGDisplay.halfBody.paintedLines.display = "flex"
-        modelsIMGDisplay.fullBody.paintedLines.display = "flex"
-    }
-
-    if (indexCustom[5] === 0) {
-        modelsIMGDisplay.halfBody.NSFW.display = "none"
-        modelsIMGDisplay.fullBody.NSFW.display = "none"
-    } else {
-        modelsIMGDisplay.halfBody.NSFW.display = "flex"
-        modelsIMGDisplay.fullBody.NSFW.display = "flex"
-    }
-}
