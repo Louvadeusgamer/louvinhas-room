@@ -271,12 +271,28 @@
                 const desc = document.createElement("span")
                 const user = document.createElement("span")
                 const date = document.createElement("span")
+                
 
                 image.src = `../img/${art.img}`
                 desc.innerHTML = `${art.Dpt}<br>`
                 user.innerHTML = `Para @${art.user} do ${art.social}<br>`
                 date.innerHTML = `Finalizado ${art.data}`
                 divisor.className = "images"
+
+
+                if (typeof(art.alt) !== "undefined") {
+                    const altsdet = document.createElement("details")
+                    const altssum = document.createElement("summary")
+                    altsdet.appendChild(altssum)
+                    altssum.innerHTML = "ALTs"
+                    for (const i in art.alt) {
+                        const alt = art.alt[i]
+                        const altimg = document.createElement(img)
+                        altimg.src = `../img/${alt}`
+                        altsdet.appendChild(altimg)
+                    }
+                    divisor.appendChild(altsdet)
+                }
 
                 sect.appendChild(divisor)
                 divisor.appendChild(image)

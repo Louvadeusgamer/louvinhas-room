@@ -53,11 +53,7 @@ class Gift extends Art {
     }
 }
 
-class ALT {
-    constructor(img) {
-        this.img = img
-    }
-}
+
 
 const cmms = [
     
@@ -93,7 +89,7 @@ const gifts = [
         "11/09/2024",
         "co3kiefox.bsky.social",
         SM.bsky,
-        [new ALT("All arts/ErinaSonaALT1.png"), new ALT("All arts/ErinaSonaALT2.png")]
+        ["All arts/ErinaSonaALT1.png", "All arts/ErinaSonaALT2.png"]
     ),
     new Gift(
         "All arts/DariusSwimgsuit.png",
