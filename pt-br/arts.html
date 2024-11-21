@@ -266,6 +266,7 @@
 
                 sect.appendChild(heade)
             } else {
+                const divisor = document.createElement("div")
                 const image = document.createElement("img")
                 const desc = document.createElement("span")
                 const user = document.createElement("span")
@@ -274,11 +275,14 @@
                 image.src = `../img/${art.img}`
                 desc.innerHTML = `${art.Dpt}<br>`
                 user.innerHTML = `Para @${art.user} do ${art.social}<br>`
-                date.innerHTML = `Finalizado ${art.date}`
-                sect.appendChild(image)
-                sect.appendChild(desc)
-                sect.appendChild(user)
-                sect.appendChild(date)
+                date.innerHTML = `Finalizado ${art.data}`
+                divisor.classList.replace("", "images")
+
+                sect.appendChild(divisor)
+                divisor.appendChild(image)
+                divisor.appendChild(desc)
+                divisor.appendChild(user)
+                divisor.appendChild(date)
             }
             
         }
