@@ -278,7 +278,11 @@
                 user.innerHTML = `Para @${art.user} do ${art.social}<br>`
                 date.innerHTML = `Finalizado ${art.data}`
                 divisor.className = "images"
-
+                sect.appendChild(divisor)
+                divisor.appendChild(image)
+                divisor.appendChild(desc)
+                divisor.appendChild(user)
+                divisor.appendChild(date)
 
                 if (typeof(art.alt) !== "undefined") {
                     const altsdet = document.createElement("details")
@@ -294,11 +298,7 @@
                     divisor.appendChild(altsdet)
                 }
 
-                sect.appendChild(divisor)
-                divisor.appendChild(image)
-                divisor.appendChild(desc)
-                divisor.appendChild(user)
-                divisor.appendChild(date)
+                
             }
             
         }
