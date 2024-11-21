@@ -251,10 +251,10 @@
     </section>
 
     <script type="module">
-        import gifts from "../img/imgOrganizer.js"
+        import { gifts } from "../img/imgOrganizer.js"
         const sect = document.getElementById("2")
 
-        for (const artN in gifts) {
+        for (let artN = 0; artN < gifts[0].length; artN++) {
             console.log(artN)
             const art = gifts[artN]
             console.log(art)
