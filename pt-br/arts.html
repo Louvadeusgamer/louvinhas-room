@@ -258,20 +258,26 @@
             const art = gifts[i]
             if (art.read) {
                 sect.createElement("hr")
-                const heade = sect.createElement("h2")
+                const heade = document.createElement("h2")
                 
                 heade.innerHTML = art.year
+
+                sect.appendChild(heade)
             } else {
                 
-                const image = sect.createElement("img")
-                const desc = sect.createElement("span")
-                const user = sect.createElement("span")
-                const date = sect.createElement("span")
+                const image = document.createElement("img")
+                const desc = document.createElement("span")
+                const user = document.createElement("span")
+                const date = document.createElement("span")
 
                 image.src = `../img/${art.img}`
                 desc.innerHTML = `${art.Dpt}<br>`
                 user.innerHTML = `Para @${art.user} do ${art.social}<br>`
                 date.innerHTML = `Finalizado ${art.date}`
+                sect.appendChild(image)
+                sect.appendChild(desc)
+                sect.appendChild(user)
+                sect.appendChild(date)
             }
             
         }
