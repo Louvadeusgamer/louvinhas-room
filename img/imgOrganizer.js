@@ -157,7 +157,8 @@ const gifts = [
         "KiramaFox", 
         SM.tt
     ),
-    new Gift("All arts/brusukySkate.png", 
+    new Gift(
+        "All arts/BrusukySkate.png", 
         "'Zóia! uma cabra skatista!", 
         "Look! A skateboarding goat!", 
         "28/06/2023",
@@ -165,7 +166,7 @@ const gifts = [
         SM.tt
     ),
     new Gift(
-        "All arts/cookieForAGoodra", 
+        "All arts/cookieForAGoodra.png", 
         "Um grande Cookie para um grande Goodra ^w^", 
         "A big cookie for a big Goodra ^w^", 
         "14/06/2024", 
