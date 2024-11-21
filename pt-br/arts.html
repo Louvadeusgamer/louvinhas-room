@@ -254,8 +254,7 @@
         import gifts from "../img/imgOrganizer.js"
         const sect = document.getElementById("2")
 
-        for (const i in gifts) {
-            const art = gifts[i]
+        for (const art in gifts) {
             if (art.read) {
                 sect.createElement("hr")
                 const heade = document.createElement("h2")
@@ -264,7 +263,6 @@
 
                 sect.appendChild(heade)
             } else {
-                
                 const image = document.createElement("img")
                 const desc = document.createElement("span")
                 const user = document.createElement("span")
