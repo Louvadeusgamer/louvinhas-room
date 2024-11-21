@@ -254,7 +254,7 @@
         import gifts from "../img/imgOrganizer.js"
         const sect = document.getElementById("2")
 
-        for (let artN = 0; artN < gifts[0].length; artN++) {
+        for (const artN in gifts) {
             console.log(artN)
             const art = gifts[artN]
             console.log(art)
