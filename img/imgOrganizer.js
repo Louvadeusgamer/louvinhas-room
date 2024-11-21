@@ -67,7 +67,7 @@ const gifts = [
     new Divisor(2024),
 
     new Gift(
-        "All arts/ChromyBirthdayGift",
+        "All arts/ChromyBirthdayGift.png",
         "Um incrível presente de aniversário que eu e a @co3kiefox fizemos :3",
         "One amazing bithday gift were me and @Co3kiefox made :3",
         "26/09/2024",
