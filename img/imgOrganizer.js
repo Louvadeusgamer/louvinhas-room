@@ -212,4 +212,4 @@ const gifts = [
 
 
 
-export default { gifts }
+export { gifts }
