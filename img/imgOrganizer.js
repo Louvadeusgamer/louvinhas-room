@@ -35,7 +35,7 @@ class Cmm extends imgSheet {
         this.user = user
         this.social = social
         this.tag = tag
-        this.alts = alts
+        this.alt = alt
     }
 }
 
@@ -74,7 +74,7 @@ const cmms = [
         tags.halloween2024
     ),
     new Cmm(
-        "cmm/halloween2024/chomy.exe.png",
+        "cmm/halloween2024/chromy.exe.png",
         "01/10/2024",
         "chromy.exe",
         SM.dc,
@@ -123,22 +123,22 @@ const cmms = [
         tags.pride
     ),
     new Cmm(
-        "cmm/goods/FARFACE5",
+        "cmm/goods/FARFACE5.png",
         "25/4/2024",
         "FARFACE5",
         SM.tt,
         tags.goods
     ),
     new Cmm(
-        "cmm/goods/Raposinha_ai343VER1.png",
+        "cmm/goods/raposinha_ai343VER1.png",
         "24/04/2024",
         "Raposinha_ai343",
         SM.tt,
         tags.goods,
-        ["cmm/goods/Raposinha_ai343VER2.png"]
+        ["cmm/goods/raposinha_ai343VER2.png"]
     ),
     new Cmm(
-        "cmm/goods/coekiefox.png",
+        "cmm/goods/co3kiefox.png",
         "23/4/2024",
         "co3kiefox",
         SM.tt,
