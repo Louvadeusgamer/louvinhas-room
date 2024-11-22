@@ -34,9 +34,53 @@
 
     <script type="module">
         import {cmms} from "../img/imgOrganizer.js"
-
         const sect = document.getElementById("artsHere")
+        for (const artN in cmms) {
+            const art = cmms[artN]
+            if (art.read) {
+                document.createElement("hr")
+                const heade = document.createElement("h2")
+                
+                heade.innerHTML = art.year
+
+                sect.appendChild(heade)
+            } else {
+                const divisor = document.createElement("div")
+                const image = document.createElement("img")
+                const user = document.createElement("span")
+                const date = document.createElement("span")
+                
+
+                image.src = `../img/${art.img}`
+                user.innerHTML = `Para @${art.user} do ${art.social}<br>`
+                date.innerHTML = `Finalizado ${art.data}`
+                divisor.className = "images"
+                sect.appendChild(divisor)
+                divisor.appendChild(image)
+                divisor.appendChild(user)
+                divisor.appendChild(date)
+
+                if (typeof(art.alt) !== "undefined") {
+                    const altsdet = document.createElement("details")
+                    const altssum = document.createElement("summary")
+                    altsdet.appendChild(altssum)
+                    altssum.innerHTML = "ALTs"
+                    for (const i in art.alt) {
+                        const alt = art.alt[i]
+                        const altimg = document.createElement("img")
+                        altimg.src = `../img/${alt}`
+                        altsdet.appendChild(altimg)
+                    }
+                    divisor.appendChild(altsdet)
+                }
+            }
+        }
+        
     </script>
+
+<script type="module">
+    
+</script>
 
         <nav>
             <a href="#top">^ Voltar ao topo ^</a>
