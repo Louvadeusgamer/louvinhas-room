@@ -341,4 +341,4 @@ const gifts = [
 
 
 
-export default {gifts, cmms}
+export {gifts, cmms}
