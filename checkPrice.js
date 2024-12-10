@@ -126,7 +126,7 @@ let indexgoods = [0, 0]
 let IndexPride = 0
 let indexHalloween = [0, 0, 0, 0]
 
-let customDiscount = [true, 0.05, 0.15]
+let customDiscount = [false, 0.05, 0.15]
 const customDoc = document.getElementById("customCalcDisc")
 if (customDiscount[0]) {
     customDoc.style.display = "flex"
