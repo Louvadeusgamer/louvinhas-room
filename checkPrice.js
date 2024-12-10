@@ -407,8 +407,9 @@ function calc(tab) {
         } else if (indexCustom[3] === 0 && indexCustom[4] === 0){
             if (customDiscount[0]) {
                 calcCS1 = applyDiscount(calcCS1)
-                document.getElementById("totalCalc").innerHTML = currency + calcCS1
+        
             }
+document.getElementById("totalCalc").innerHTML = currency + calcCS1
         }
         
     }
