@@ -64,7 +64,8 @@ const cmms = [
         "11/12/2024",
         "jjelson",
         SM.dc,
-        tags.custom
+        tags.custom,
+        []
     ),
 
     new Cmm(
@@ -72,70 +73,80 @@ const cmms = [
         "01/10/2024",
         "draglu_17",
         SM.dc,
-        tags.halloween2024
+        tags.halloween2024,
+        []
     ),
     new Cmm(
         "cmm/halloween2024/co3kyfox.png",
         "01/10/2024",
         "co3kyfox",
         SM.dc,
-        tags.halloween2024
+        tags.halloween2024,
+        []
     ),
     new Cmm(
         "cmm/halloween2024/chromy.exe.png",
         "01/10/2024",
         "chromy.exe",
         SM.dc,
-        tags.halloween2024
+        tags.halloween2024,
+        []
     ),
     new Cmm(
         "cmm/custom/yelleow_01.png",
         "27/06/2024",
         "yellewo_01",
         SM.dc,
-        tags.custom
+        tags.custom,
+        []
     ),
     new Cmm(
         "cmm/pride/co3kyfox.png",
         "19/06/2024",
         "co3kyfox",
         SM.dc,
-        tags.pride
+        tags.pride,
+        []
     ),
     new Cmm(
         "cmm/pride/melvinkitty.png",
         "01/06/2024",
         "melvinkitty",
         SM.dc,
-        tags.pride
+        tags.pride,
+        []
     ),
     new Cmm(
         "cmm/pride/jesse13_.png",
         "30/05/2024",
         "jesse13_",
         SM.dc,
-        tags.pride
+        tags.pride,
+        []
     ),
     new Cmm(
         "cmm/pride/meiruucuteness.png",
         "30/05/2024",
         "meiruucuteness",
         SM.tt,
-        tags.pride
+        tags.pride,
+        []
     ),
     new Cmm(
         "cmm/pride/kodytk.png",
         "30/05/2024",
         "kodytk",
         SM.dc,
-        tags.pride
+        tags.pride,
+        []
     ),
     new Cmm(
         "cmm/goods/FARFACE5.png",
         "25/4/2024",
         "FARFACE5",
         SM.tt,
-        tags.goods
+        tags.goods,
+        []
     ),
     new Cmm(
         "cmm/goods/raposinha_ai343VER1.png",
@@ -150,14 +161,16 @@ const cmms = [
         "23/4/2024",
         "co3kiefox",
         SM.tt,
-        tags.goods
+        tags.goods,
+        []
     ),
     new Cmm(
         "cmm/custom/melvinho_kitty.png",
         "10/03/2024",
         "melvinho_kitty",
         SM.tt,
-        tags.custom
+        tags.custom,
+        []
     ),
 
     new Divisor(2023),
@@ -167,35 +180,40 @@ const cmms = [
         "28/11/2023",
         "DavyLuizz",
         SM.tt,
-        tags.custom
+        tags.custom,
+        []
     ),
     new Cmm(
         "cmm/custom/S2LuhBR.png",
         "23/11/2023",
         "S2LuhBR",
         SM.tt,
-        tags.custom
+        tags.custom,
+        []
     ),
     new Cmm(
         "cmm/abraca/loboartsNSFW.png",
         "12/11/2023",
         "loboartsNSFW",
         SM.tt,
-        tags.abraca
+        tags.abraca,
+        []
     ),
     new Cmm(
         "cmm/abraca/FARFACE5.png",
         "12/11/2023",
         "FARFACE5",
         SM.tt,
-        tags.abraca
+        tags.abraca,
+        []
     ),
     new Cmm(
         "cmm/abraca/TheRealShelly.png",
         "02/11/2023",
         "TheRealShelly",
         SM.tt,
-        tags.abraca
+        tags.abraca,
+        []
     )
 ]
 
