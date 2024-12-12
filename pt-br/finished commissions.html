@@ -18,10 +18,6 @@
         </nav>
     </header>
 
-    <section class="warning">
-        <h1>Em manutenção</h1>
-    </section>
-
     
     <section class="container">
         <h1>Comissões feita</h1>
@@ -52,7 +48,7 @@
                 
 
                 image.src = `../img/${art.img}`
-                user.innerHTML = `Para @${art.user} do ${art.social}<br>`
+                user.innerHTML = `Comissão ${art.tag} Para @${art.user} do ${art.social}<br>`
                 date.innerHTML = `Finalizado ${art.data}`
                 divisor.className = "images"
                 sect.appendChild(divisor)
@@ -77,10 +73,6 @@
         }
         
     </script>
-
-<script type="module">
-    
-</script>
 
         <nav>
             <a href="#top">^ Voltar ao topo ^</a>

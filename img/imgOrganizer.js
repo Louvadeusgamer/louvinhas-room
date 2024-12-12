@@ -60,6 +60,14 @@ const cmms = [
     new Divisor(2024),
 
     new Cmm(
+        "cmm/custom/jjelson.png",
+        "11/12/2024",
+        "jjelson",
+        SM.dc,
+        tags.custom
+    ),
+
+    new Cmm(
         "cmm/halloween2024/draglu_17.png",
         "01/10/2024",
         "draglu_17",
@@ -341,4 +349,4 @@ const gifts = [
 
 
 
-export {gifts, cmms}
+export {gifts, cmms, artsCommon}
