@@ -30,7 +30,7 @@ class Divisor {
 }
 
 class Cmm extends imgSheet {
-    constructor(img, data, user, social, tag, alts) {
+    constructor(img, data, user, social, tag, alt) {
         super(img, data)
         this.user = user
         this.social = social
