@@ -1,9 +1,9 @@
 class imgSheet {
-    constructor(img, Dpt, Den, data) {
+    constructor(img, Dpt, Den, date) {
         this.img = img
         this.Dpt = Dpt
         this.Den = Den
-        this.data = data
+        this.data = date
     }
 }
 
@@ -30,8 +30,8 @@ class Divisor {
 }
 
 class Cmm extends imgSheet {
-    constructor(img, data, user, social, tag, alt) {
-        super(img, data)
+    constructor(img, date, user, social, tag, alt) {
+        super(img, date)
         this.user = user
         this.social = social
         this.tag = tag
@@ -40,14 +40,14 @@ class Cmm extends imgSheet {
 }
 
 class Art extends imgSheet {
-    constructor(img, Dpt, Den, data) {
-        super(img, Dpt, Den, data)
+    constructor(img, Dpt, Den, date) {
+        super(img, Dpt, Den, date)
     }
 }
 
 class Gift extends Art {
-    constructor(img, Dpt, Den, data, user, social, alt) {
-        super(img, Dpt, Den, data)
+    constructor(img, Dpt, Den, date, user, social, alt) {
+        super(img, Dpt, Den, date)
         this.user = user
         this.social = social
         this.alt = alt
