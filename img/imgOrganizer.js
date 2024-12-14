@@ -9,10 +9,10 @@ class imgSheet {
 
 const tags = {
     custom: "custom",
-    abraca: "abraçadinhos",
-    goods: "show your goods",
-    pride: "pride face",
-    halloween2024: "halloween 2024"
+    abraca: "YCH abraçadinhos",
+    goods: "YCH show your goods",
+    pride: "YCH pride face",
+    halloween2024: "YCH halloween 2024"
 }
 
 const SM = {
