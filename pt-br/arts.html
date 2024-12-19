@@ -50,9 +50,9 @@
         import { artsCommon } from "../img/imgOrganizer.js"
         const secti = document.getElementById("0")
 
-        for (const artN in gifts) {
+        for (const artN in artsCommon) {
             console.log(artN)
-            const art = gifts[artN]
+            const art = artsCommon[artN]
             console.log(art)
             if (art.read) {
                 document.createElement("hr")
