@@ -40,8 +40,9 @@ class Cmm extends imgSheet {
 }
 
 class Art extends imgSheet {
-    constructor(img, Dpt, Den, date) {
+    constructor(img, Dpt, Den, date, alt) {
         super(img, Dpt, Den, date)
+        this.alt = alt
     }
 }
 
@@ -218,7 +219,221 @@ const cmms = [
 ]
 
 const artsCommon = [
-    
+    new Divisor(2024),
+
+    new Art(
+        "All arts/LouvaHalloween.png",
+        "Louva vestida de Joker ✨",
+        "Louva dressed like Joker",
+        "26/09/2024",
+        []
+    ),
+    new Art(
+        "All arts/SleepingKittiers.png",
+        "Dormindo com minhas gatinhas <3",
+        "Sleeping with my kitties",
+        "28/06/2024",
+        []
+    ),
+    new Art(
+        "All arts/FormalKitty.png",
+        "Parece que a gatinha tá formal hoje~",
+        "Looks lije kitty got formal today~",
+        "03/05/2024",
+        []
+    ),
+    new Art(
+        "All arts/MooSuit.png",
+        "Awwn~, ela tá muito fofa com essa roupinha de vaquinha~ >w<",
+        "Owwn~, She's looks so cute in that moo suit~ >w<",
+        "02/05/2024",
+        []
+    ),
+    new Art(
+        "All arts/PetingPeting.png",
+        "T-tanta mão~, tanto carinho~",
+        "S-so many hands~, many pet pet~",
+        "30/04/2024",
+        []
+    ),
+    new Art(
+        "All arts/ShowYourGoodsLouva.png",
+        "Olhe meus feijõeszinhos rosinhas~<br><a href='https://louvadeusgamer.github.io/louvinhas-room/pt-br/arts.html'>Este YCH está disponível!</a>",
+        "Look at my pink beans~<br><a href='https://louvadeusgamer.github.io/louvinhas-room/pt-br/arts.html'>This YCH is avalaible!</a>",
+        "23/04/2024",
+        []
+    ),
+    new Art(
+        "All arts/BunnyDay2024.png",
+        "Ela se tranformou em uma coelha para a páscoa! Você aceita um ovo de chocolate?",
+        "She's transformed herself for that bunny's day! Do you accept that chocolate egg?",
+        "31/03/2024",
+        []
+    ),
+    new Art(
+        "All arts/Moon.png",
+        "Aqui está Moon, minha nova OC dragoa ~w~",
+        "There's Moon, my new dragon OC ~w~",
+        "21/03/2024",
+        []
+    ),
+    new Art(
+        "All arts/JennyNewStyle.png",
+        "Redesign da Jenny! Ela é mãe adotiva da Louva :3",
+        "Jenny's redesign! She's Louva's adoptive mother :3",
+        "21/03/2024",
+        []
+    ),
+    new Art(
+        "All arts/Amogus.png",
+        "LOUVA SUSSY AMOGUS 😲😲😲",
+        "LOUVA SUSSY AMOGUS 😲😲😲",
+        "17/03/2024",
+        []
+    ),
+    new Art(
+        "All arts/KissingKutsune.png",
+        "Louva beijando essa poposa fofa chamada Kutsune~",
+        "louva kissing this cutie fox called Kutsune~",
+        "13/03/2024",
+        []
+    ),
+    new Art(
+        "All arts/BeautyView.png",
+        "A vista da cidade é tão linda~",
+        "The view of the city is so beautiful~",
+        "01/01/2024",
+        []
+    ),
+
+    new Divisor(2023),
+
+    new Art(
+        "All arts/Thinking.png",
+        "Pensando...",
+        "Thinking...",
+        "19/11/2023",
+        []
+    ),
+    new Art(
+        "All arts/LouvaNervous.png",
+        "Louva está te cumprimentando, ela parece um pouco nervosa >///<",
+        "Louva saying hi to you, she's looks nervous >///<",
+        "09/11/2023",
+        []
+    ),
+    new Art(
+        "All arts/Louva&Katim2Months.png",
+        "Louva dormindo com Katim (2 meses de namoro...)<br><a href='https://louvadeusgamer.github.io/louvinhas-room/pt-br/arts.html'>Este YCH está disponível!</a>",
+        "Louva sleeping with Kati, (2 months dating...)<br><a href='https://louvadeusgamer.github.io/louvinhas-room/pt-br/arts.html'>This YCH is avalaible!</a>",
+        "24/10/2023",
+        []
+    ),
+    new Art(
+        "All arts/Louva&KatimMinecraft.png",
+        "Eu e o Katim dentro da nossa casa do Minecraft",
+        "Me and Katim inside of our Minecraft house",
+        "17/10/2023",
+        []
+    ),
+    new Art(
+        "All arts/IDontKnowANameForThis.png",
+        "Uma (falha) tentativa de criar uma nova OC ;w;",
+        "A (failed) try of creating a new OC ;w;",
+        "09/10/2023",
+        []
+    ),
+    new Art(
+        "All arts/LunaRefsheet.png",
+        "Eis a irmã da Louva: Luna!",
+        "There is Louva's sister: Luna!",
+        "13/09/2023",
+        []
+    ),
+    new Art(
+        "All arts/ChipSack.png",
+        "Quando alguém abre um Doritos X3",
+        "When someone open a Doritos X3",
+        "07/08/2023",
+        []
+    ),
+    new Art(
+        "All arts/LouvaMaid.png",
+        "Eu de maid..",
+        "Me as a maid..",
+        "17/07/2023",
+        ["All arts/LouvaMaidALT.png"]
+    ),
+    new Art(
+        "All arts/DiscordIcon2023.png",
+        "A primeira versão do Icon do meu server do Discord!",
+        "The first version of my Discord server!",
+        "01/07/2023",
+        []
+    ),
+    new Art(
+        "All arts/TwitterBanner.png",
+        "Meu primeiro banner do Twitter!",
+        "My first banner on Twitter!",
+        "01/06/2023",
+        []
+    ),
+    new Art(
+        "All arts/FirstPrideFace.png",
+        "Primeira verção do YCH Pride Face!",
+        "First version of Pride Face YCH!",
+        "30/05/2023",
+        []
+    ),
+    new Art(
+        "All arts/MamalurewLead.png",
+        "@mamalurew colocou uma guia em mim~",
+        "@mamalurew put me a lead~",
+        "25/05/2023",
+        []
+    ),
+    new Art(
+        "All arts/InteractionAttemp.png",
+        "Tentativa falha de interação ;w;",
+        "A failed interaction attemp ;w;",
+        "24/05/2023",
+        []
+    ),
+    new Art(
+        "All arts/Femboy.png",
+        "Louva femboy, apenas..",
+        "Louva femboy, just it..",
+        "18/05/2023",
+        []
+    ),
+    new Art(
+        "All arts/TaticalKitty.png",
+        "Gatinha tática",
+        "Tatical kitty",
+        "11/05/2023",
+        []
+    ),
+    new Art(
+        "All arts/BunnyDay2023.png",
+        "Arte para a páscoa de 2023!",
+        "Art for 2023 bunny day!",
+        "09/04/2023",
+        ["All arts/BunnyDay2023ALT.png"]
+    ),
+    new Art(
+        "All arts/LarryProjectHSona.png",
+        "Arte para o #projectHSona no Twitter!",
+        "Art for #ProjectHSona on Twitter!",
+        "24/02/2023",
+        []
+    ),
+    new Art(
+        "All arts/DrawMyMutualsOCs.png",
+        "Eu fiz os OCs dos meus mutuals!",
+        "I make my mutual's OCs!",
+        "04/02/2023",
+        []
+    )
 ]
 
 const gifts = [
@@ -364,7 +579,5 @@ const gifts = [
         SM.tt
     )
 ]
-
-
 
 export {gifts, cmms, artsCommon}
