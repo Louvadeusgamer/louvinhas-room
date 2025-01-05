@@ -65,22 +65,19 @@
                 const divisor = document.createElement("div")
                 const image = document.createElement("img")
                 const desc = document.createElement("span")
-                const user = document.createElement("span")
                 const date = document.createElement("span")
                 
 
                 image.src = `../img/${art.img}`
                 desc.innerHTML = `${art.Dpt}<br>`
-                user.innerHTML = `For @${art.user} from ${art.social}<br>`
                 date.innerHTML = `Finished ${art.data}`
                 divisor.className = "images"
                 secti.appendChild(divisor)
                 divisor.appendChild(image)
                 divisor.appendChild(desc)
-                divisor.appendChild(user)
                 divisor.appendChild(date)
 
-                if (typeof(art.alt) !== "undefined") {
+                if (art.alt.length > 0) {
                     const altsdet = document.createElement("details")
                     const altssum = document.createElement("summary")
                     altsdet.appendChild(altssum)
