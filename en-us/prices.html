@@ -19,16 +19,175 @@
         </div>
     </header>
 
-    
-    <section class="warning">
-        <h1>Warning</h1>
-        <p>I don't accept payment in <b>dollars</b>, <b>euros</b> and others per now, I just accept in <b>BRL</b> and need pay with <b>Pix</b></p>
-        <p>So, if you wanna a commission, make sure you can pay in BRL and in Pix</p>
-    </section>
+    <section class="container">
+        <h2>Calculadora de comissões</h2>
+        <p>Temos aqui uma calculadora! Sim, você pode verificar o preço total do quanto você irá pagar por uma comissão minha!</p>
+        <section class="inside-container calc">
 
-    <section class="warning">
-        <h1>Calculator unvalaible</h1>
-        <p>Sorry, but the commissions calculator is not avalaible in english site version, you can check the portuguese version in brazil currency: <a href="../pt-br/prices.html">Português brasileiro</a></p>
+            <div class="calc type">
+                <p>Tipo de comissão <br>
+                <button id="0" class="true R" onclick="tab(0)">Custom</button>
+                <button id="1" class="false" onclick="tab(1)">YCH Abraçadinhos</button>
+                <button id="2" class="false" onclick="tab(2)">YCH Show Your Goods</button>
+                <button id="3" class="false " onclick="tab(3)">YCH Pride Face</button>
+                <button id="4" class="dis false L" onclick="tab(4)">YCH Halloween</button>
+            </p>
+            </div>
+
+            <hr>
+
+            <div class="calc type">
+                <p>Moeda<br>
+                    <button id="r" class="true R" onclick="changeCur(0)">Real (R$ / BRL)</button>
+                    <button id="d" class="false L" onclick="changeCur(1)">Dolar ($ / USD)</button>
+                </p>
+            </div>
+
+            <hr>
+
+            <div id="custom">
+
+                <h2>Custom</h2>
+
+                <div class="custom">
+                    <div class="customThings">
+
+                        <p>Render: <br>
+                            <button onclick="changeValue(0, 0, 0)" class="yes R" id="flatColor">Flat colors</button>
+                            <button onclick="changeValue(0, 0, 1)" class="no L" id="Shader">Shaded</button>
+                        </p>
+
+                        <p>Size: <br>
+                            <button onclick="changeValue(0, 1, 0)" class="yes R" id="HS">Headshot</button>
+                            <button onclick="changeValue(0, 1, 1)" class="no" id="HB">Halfbody</button>
+                            <button onclick="changeValue(0, 1, 2)" class="no L" id="FB">Fullbody</button>
+                        </p>
+
+                        <p>Lines type: <br>
+                            <button onclick="changeValue(0, 2, 0)" class="yes R" id="NL">Normal</button>
+                            <button onclick="changeValue(0, 2, 1)" class="no L" id="PL">Painted</button>
+                        </p>
+
+                        <p>OCs quantity: <br>
+                            <button onclick="changeValue(0, 3, -1)" class="R">-</button> 
+                            <button id="ocsCustomIndex">1</button>
+                            <button onclick="changeValue(0, 3, 1)" class="L">+</button>
+                        </p>
+
+                        <p>Alts quantity: <br>
+                            <button onclick="changeValue(0, 4, -1)" class="R">-</button>
+                            <button id="altsCustomIndex">1</button>
+                            <button onclick="changeValue(0, 4, 1)" class="L">+</button>
+                        </p>
+
+                        <p>NSFW? <br>
+                            <button onclick="changeValue(0, 5, 0)" class="yes R" id="nsfwCN">No</button>
+                            <button onclick="changeValue(0, 5, 1)" class="no L" id="nsfwCY">Yes</button>
+                        </p>
+
+                    </div>
+
+                    <div id="customModel">
+                        <h3>Model</h3>
+                        <div id="fullbody">
+                            <img src="../img/models/FB/FB model base.png" alt="" id="FBModelBase">
+                            <img src="../img/models/FB/FB model S.png" alt="" id="FBModelS">
+                            <img src="../img/models/FB/FB model PL.png" alt="" id="FBModelPL">
+                            <img src="../img/models/FB/FB model NSFW.png" alt="" id="FBModelNSFW">
+                        </div>
+                        <div id="halfbody">
+                            <img src="../img/models/HB/HB model base.png" alt="" id="HBModelBase">
+                            <img src="../img/models/HB/HB model S.png" alt="" id="HBModelS">
+                            <img src="../img/models/HB/HB model PL.png" alt="" id="HBModelPL">
+                            <img src="../img/models/HB/HB model NSFW.png" alt="" id="HBModelNSFW">
+                        </div>
+                        <div id="headshot">
+                            <img src="../img/models/HS/HS model base.png" alt="" id="HSModelBase">
+                            <img src="../img/models/HS/HS model S.png" alt="" id="HSModelS">
+                            <img src="../img/models/HS/HS model PL.png" alt="" id="HSModelPL">
+                        </div>
+                    </div>
+                </div>
+                <h3>Total: <br><span id="totalCalc"></span></h3>
+            </div>
+
+            
+            
+
+            <div id="abraca">
+                <h2>YCH: Abraçadinhos</h2>
+
+                <p>How much OCs? <br>
+                    <button onclick="changeValue(1, 0, 0)" class="R yes" id="ocsAbraca1">1</button>
+                    <button onclick="changeValue(1, 0, 1)" class="L no" id="ocsAbraca2">2</button>
+                </p>
+
+                <p>Background type <br>
+                    <button onclick="changeValue(1, 1, 0)" class="R yes" id="CSAbraca">Solid color</button>
+                    <button onclick="changeValue(1, 1, 1)" class="no" id="ImgAbraca">Image</button>
+                    <button onclick="changeValue(1, 1, 2)" class="L no" id="BGAbraca">Drawned</button>
+                </p>
+
+                <h3>Total: <br><span id="totalCalc1"></span></h3>
+            </div>
+
+            <div id="goods">
+                <h2>YCH Show Your Goods</h2>
+                <p>Background type <br>
+                    <button onclick="changeValue(2, 0, 0)" class="yes R" id="CSGoods">Solid color</button>
+                    <button onclick="changeValue(2, 0, 1)" class="no L" id="BGGoods">Drawned</button>
+                </p>
+
+                <p>Want a NSFW version? <br>
+                    <button onclick="changeValue(2, 1, 0)" class="yes R" id="nsfwGN">No</button>
+                    <button onclick="changeValue(2, 1, 1)" class="no L" id="nsfwGY">Yes</button>
+                </p>
+
+                <h3>Total: <br><span id="totalCalc2"></span></h3>
+            </div>
+
+            <div id="pride">
+                <h2>YCH Pride Face</h2>
+                <p>Background type <br>
+                    <button onclick="changeValue(3, 0, 0)" class="yes R" id="CSPride">Solid color</button>
+                    <button onclick="changeValue(3, 0, 1)" class="no L" id="BGPride">Drawned</button>
+                </p>
+
+                <h3>Total: <br><span id="totalCalc3"></span></h3>
+            </div>
+
+            <div id="halloween">
+                <h2>Halloween YCH</h2>
+                <p>That YCH will be available from 01/10/2024 to 31/10/2024</p>
+
+                <p>Do you want another face on pumpkin? <br>
+                    <button onclick="changeValue(4, 0, 0)" class="yes R" id="PFHN">No</button>
+                    <button onclick="changeValue(4, 0, 1)" class="no L" id="PFHY">Yes</button>
+                </p>
+
+                <p>Want a ALT NSFW? <br>
+                    <button onclick="changeValue(4, 1, 0)" class="yes R" id="ALTNSFWN">No</button>
+                    <button onclick="changeValue(4, 1, 1)" class="no L" id="ALTNSFWY">Yes</button>
+                </p>
+
+                <p>How much suits do you want? <br>
+                    <button onclick="changeValue(4, 2, -1)" class="R">-</button>
+                    <button id="suitsH">1</button>
+                    <button onclick="changeValue(4, 2, 1)" class="L">+</button>
+                </p>
+
+                <p>Render: <br>
+                    <button onclick="changeValue(4, 3, 0)" class="yes R" id="FCH">Flat colors</button>
+                    <button onclick="changeValue(4, 3, 1)" class="no L" id="SH">Shader</button>
+                </p>
+
+                <h3>Total: <br><span id="totalCalc4"></span></h3>
+                
+            </div>
+
+            
+
+        </section>
     </section>
 
     <section class="container">
@@ -37,7 +196,7 @@
         <ol>
             <li>Join to my Discord server: <a href="https://discord.gg/zP5xeXNJ9M" target="_blank">Louvaworld</a></li>
             <li>Open the channel "ticket" (you can access the channel from this link after join the server: <a href="https://discord.com/channels/849248533130379284/1208417687265480704" target="_blank">Channel "ticket"</a></li>
-            <li>Inside the channel, click in the green button "fazer pedido"<br><div class="images"><img class="images toShow" src="../img/info/1.png" alt="Imagem mostrando o canal ticket do servidor Louvaworld" width="500px"></div></li>
+            <li>Inside the channel, click in the green button "fazer pedido"<br><img class="imginfo" src="../img/info/1.png" alt="Imagem mostrando o canal ticket do servidor Louvaworld" width="500px"></li>
             <li>And done! Now follow the instructions until someone helps you!</li>
         </ol>
     </section>
@@ -58,19 +217,17 @@
         <p>There is the prices of my custom commissions:</p>
         
         <ul>
-            <li>Headshot: <b>R$ 5,00</b></li>
-            <li>Halfbody: <b>R$ 7,50</b></li>
-            <li>Fullbody: <b>R$ 10,00</b></li>
+            <li>Headshot: <b>$ 2,00</b></li>
+            <li>Halfbody: <b>$ 4,50</b></li>
+            <li>Fullbody: <b>$ 6,00</b></li>
             <li>Extras ocs: <b>+50%</b> per oc</li>
             <li>Alts: <b>+25%</b> per alt</li>
-            <li>NSFW: <b>+ R$ 2,00</b></li>
-            <li>Mini comic: <b>R$ 8,00</b> per frame</li>
+            <li>NSFW: <b>+ $ 1,00</b></li>
+            <li>Mini comic: <b>$ 4,00</b> per frame</li>
         </ul>
 
-        <div class="images">
-        <img class="images toShow" src="../img/cmm/4.png" alt="commission table 1" width="500px">
-        <img class="images toShow" src="../img/cmm/5.png" alt="commission table 2" width="500px">
-        </div>
+        <img class="imgcmm" src="../img/cmm/4.png" alt="commission table 1" width="500px">
+        <img class="imgcmm" src="../img/cmm/5.png" alt="commission table 2" width="500px">
     </section>
 
     <section class="container">
@@ -79,15 +236,15 @@
 
         <section class="inside-container">
             <h3>Abraçadinhos</h3>
-            <div class="images">
-                <img class="images toShow"src="../img/cmm/1.png" alt="Base da comissão YCH Abraçadinhos" width="400px">
-            </div>
+            <nav>
+                <img class="imgcmm"src="../img/cmm/1.png" alt="Base da comissão YCH Abraçadinhos" width="400px">
+            </nav>
             <p>Prices: </p>
             <ul>
-                <li>Just one characters: <b>R$ 5,00</b></li>
-                <li>Both characters: <b>R$ 7,50</b></li>
-                <li>Standart background (image in frame included): <b>+ R$ 0,00</b></li>
-                <li>Modified background: <b>R$ 1,00</b></li>
+                <li>Just one characters: <b>$ 2,00</b></li>
+                <li>Both characters: <b>$ 4,50</b></li>
+                <li>Standart background (image in frame included): <b>+ $ 0,00</b></li>
+                <li>Modified background: <b>$ 0,50</b></li>
             </ul>
             <p>Specifications:</p>
             <ul>
@@ -99,15 +256,15 @@
 
         <section class="inside-container">
             <h3>Show your goods</h3>
-            <div class="images">
-                <img class="images toShow" src="../img/cmm/2.png" alt="" width="400px">
-            </div>
+            <nav>
+                <img class="imgcmm" src="../img/cmm/2.png" alt="" width="400px">
+            </nav>
             <p>Prices: </p>
             <ul>
-                <li><b>R$ 5,00</b></li>
-                <li>Background with a solid color: <b>+ R$ 0,00</b></li>
-                <li>Custom background: <b>R$ 1,00</b></li>
-                <li>ALT NSFW: <b>+ R$ 0,50</b></li>
+                <li><b>$ 2,00</b></li>
+                <li>Background with a solid color: <b>+ $ 0,00</b></li>
+                <li>Custom background: <b>$ 1,00</b></li>
+                <li>ALT NSFW: <b>+ $ 0,50</b></li>
             </ul>
             <p>Specifications: </p>
             <ul>
@@ -119,14 +276,14 @@
 
         <section class="inside-container">
             <h3>Pride Face</h3>
-            <div class="images">
-                <img class="images toShow" src="../img/cmm/3.png" alt="" width="400px">
+            <nav>
+                <img class="imgcmm" src="../img/cmm/3.png" alt="" width="400px">
             </nav>
                 <p>Prices: </p>
             <ul>
-                <li><b>R$ 5,00</b></li>
-                <li>Background with a solid color: <b>+ R$ 0,00</b></li>
-                <li>Custom background: <b>+ R$ 2,50</b></li>
+                <li><b>$ 2,00</b></li>
+                <li>Background with a solid color: <b>+ $ 0,00</b></li>
+                <li>Custom background: <b>+ $ 2,50</b></li>
             </ul>
             <p>Specifications:</p>
             <ul>
@@ -136,24 +293,6 @@
                 <li>Optional shadows</li>
             </ul>
         </section>
-
-        <section class="inside-container">
-            <h3>Halloween YCH</h3>
-            <div class="images">
-                <img src="../img/cmm/6.png" alt="" class="images toShow" width="400px">
-            </div>
-
-            <p>Prices: </p>
-
-            <ul>
-                <li><b>R$ 7,50</b></li>
-                <li>Custom pumpkin's face: <b>+ R$ 1,00</b></li>
-                <li>ALT NSFW: <b>+ R$ 2,00</b></li>
-                <li>More costumes: <b>+ 50%</b> for each extra costume</li>
-                <li>Shader: <b>+ R$ 0,50</b></li>
-            </ul>
-        </section>
-
 
     </section>
 
@@ -165,7 +304,7 @@
         <div class="foot">
             <div class="langDiv">
             <nav class="lang">
-                <a class="lang" href="https://louvadeusgamer.github.io/louvinhas-room/pt-br/prices">Português brasileiro</a>
+                <a class="lang" href="../pt-br/prices.html">Português brasileiro</a>
                 <a class="there">English</a>
             </nav>
         </div>
@@ -175,6 +314,6 @@
         
         </div>
     </footer>
-    <script src="../checkPrice.js"></script>
+    <script src="../checkPrice.js" currency="1" id="awa"></script>
 </body>
 </html>

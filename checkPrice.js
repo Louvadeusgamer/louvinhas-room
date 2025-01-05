@@ -1,6 +1,62 @@
-// Variáveis Select Type
-
-let type = 0;
+const prices = [
+    { // REAL
+        cur: "R$ ",
+        custom: {
+            shader: [0, 2.5],
+            size: [5, 7.5, 10],
+            line: [0, 1],
+            ocs: 0.5,
+            alts: 0.25,
+            nsfw: [0, 2]
+        },
+        abraca: {
+            ocs: [5, 7.5],
+            bg: [0, 0, 1]
+        },
+        goods: {
+            bg: [5, 6],
+            nsfw: [0, 0.5]
+        },
+        pride: {
+            bg: [5, 7.5]
+        },
+        halloween: {
+            abobora: [7.5, 8.5],
+            nsfw: [0, 2],
+            suits: 0.5,
+            shader: [0, 0.5]
+        }
+    },
+    { // DOLAR - taxa usada: R$ 6,00
+        cur: "$ ",
+        custom: {
+            shader: [0, 1.5],
+            size: [2, 4.5, 6],
+            line: [0, 0.5],
+            ocs: 0.5,
+            alts: 0.25,
+            nsfw: [0, 1]
+        },
+        abraca: {
+            ocs: [2, 4.5],
+            bg: [0, 0, 0.5]
+        },
+        goods: {
+            bg: [2, 3],
+            nsfw: [0, 0.5]
+        },
+        pride: {
+            bg: [2, 4.5]
+        },
+        halloween: {
+            abobora: [4.5, 7],
+            nsfw: [0, 0.5],
+            suits: 0.5,
+            shader: [0, 0.5]
+        }
+    }
+]
+let type = 0
 const typesTab = [
     document.getElementById("0"),
     document.getElementById("1"),
@@ -15,23 +71,27 @@ const types = [
     document.getElementById("pride"),
     document.getElementById("halloween")
 ]
+const curTab = [
+    document.getElementById("brl"),
+    document.getElementById("usd")
+]
 
 const modelsIMGDisplay = {
     headShot: {
         base: document.getElementById("HSModelBase").style,
         shader: document.getElementById("HSModelS").style,
-        paintedLines: document.getElementById("HSModelPL").style
+        lines: document.getElementById("HSModelPL").style
     },
     halfBody: {
         base: document.getElementById("HBModelBase").style,
         shader: document.getElementById("HBModelS").style,
-        paintedLines: document.getElementById("HBModelPL").style,
+        lines: document.getElementById("HBModelPL").style,
         NSFW: document.getElementById("HBModelNSFW").style
     },
     fullBody: {
         base: document.getElementById("FBModelBase").style,
         shader: document.getElementById("FBModelS").style,
-        paintedLines: document.getElementById("FBModelPL").style,
+        lines: document.getElementById("FBModelPL").style,
         NSFW: document.getElementById("FBModelNSFW").style
     }
 }
@@ -42,399 +102,245 @@ const modelsDIVSdisplay = {
     fullBody: document.getElementById("fullbody").style
 }
 
-
-
-function tab(n) {
-    if (n === 0 && n !== type) {
-        typesTab[0].classList.replace("false", "true")
-        typesTab[1].classList.replace("true", "false")
-        typesTab[2].classList.replace("true", "false")
-        typesTab[3].classList.replace("true", "false")
-        typesTab[4].classList.replace("true", "false")
-        type = 0
-    }
-    if (n === 1 && n !== type) {
-        typesTab[0].classList.replace("true", "false")
-        typesTab[1].classList.replace("false", "true")
-        typesTab[2].classList.replace("true", "false")
-        typesTab[3].classList.replace("true", "false")
-        typesTab[4].classList.replace("true", "false")
-        type = 1
-    }
-    if (n === 2 && n !== type) {
-        typesTab[0].classList.replace("true", "false")
-        typesTab[1].classList.replace("true", "false")
-        typesTab[2].classList.replace("false", "true")
-        typesTab[3].classList.replace("true", "false")
-        typesTab[4].classList.replace("true", "false")
-        type = 2
-    }
-    if (n === 3 && n !== type) {
-        typesTab[0].classList.replace("true", "false")
-        typesTab[1].classList.replace("true", "false")
-        typesTab[2].classList.replace("true", "false")
-        typesTab[3].classList.replace("false", "true")
-        typesTab[4].classList.replace("true", "false")
-        type = 3
-    }
-    if (n === 4 && n !== type) {
-        typesTab[0].classList.replace("true", "false")
-        typesTab[1].classList.replace("true", "false")
-        typesTab[2].classList.replace("true", "false")
-        typesTab[3].classList.replace("true", "false")
-        typesTab[4].classList.replace("false", "true")
-        type = 4
-    }
-    replaceTab()
-}
-
-function replaceTab() {
-    for (let i = 0; i < types.length; i++) {
-        if (i === type) {
-            types[i].style.display = "inline"
-        } else {
-            types[i].style.display = "none"
-        }
-    }
-}
-
-const pricesCustom0 = [0, 2.5]
-const pricesCustom1 = [5, 7.5, 10]
-const pricesCustom2 = [0, 1]
-const pricesCustom3 = 0.5
-const pricesCustom4 = 0.25
-const pricesCustom5 = [0, 2]
-
-const pricesAbraca0 = [5, 7.5]
-const pricesAbraca1 = [0, 0, 1]
-
-const pricesGoods0 = [5, 6]
-const pricesGoods1 = [0, 0.5]
-
-const pricesPride0 = [5, 7.5]
-
-const pricesHalloween0 = [7.5, 8.5]
-const pricesHalloween1 = [0, 2]
-const pricesHalloween2 = 0.5
-const pricesHalloween3 = [0, 0.5]
-
-const currency = "R$ "
-
-let indexCustom = [0, 0, 0, 0, 0, 0]
-let indexAbraca = [0, 0]
-let indexgoods = [0, 0]
-let IndexPride = 0
-let indexHalloween = [0, 0, 0, 0]
-
-let customDiscount = [false, 0.05, 0.15]
-const customDoc = document.getElementById("customCalcDisc")
-if (customDiscount[0]) {
-    customDoc.style.display = "flex"
-}
-
 const updateModel = () => {
-    if (indexCustom[1] === 0) {
-        modelsDIVSdisplay.headShot.display = "flex"
-        modelsDIVSdisplay.halfBody.display = "none"
-        modelsDIVSdisplay.fullBody.display = "none"
-    } else if (indexCustom[1] === 1) {
-        modelsDIVSdisplay.headShot.display = "none"
-        modelsDIVSdisplay.halfBody.display = "flex"
-        modelsDIVSdisplay.fullBody.display = "none"
-    } else if (indexCustom[1] === 2) {
-        modelsDIVSdisplay.headShot.display = "none"
-        modelsDIVSdisplay.halfBody.display = "none"
-        modelsDIVSdisplay.fullBody.display = "flex"
-    }
+    // Size
+    modelsDIVSdisplay.headShot.display = indexes.custom.size == 0 ? "flex" : "none"
+    modelsDIVSdisplay.halfBody.display = indexes.custom.size == 1 ? "flex" : "none"
+    modelsDIVSdisplay.fullBody.display = indexes.custom.size == 2 ? "flex" : "none"
 
-    if (indexCustom[0] === 0) {
-        modelsIMGDisplay.headShot.shader.display = "none"
-        modelsIMGDisplay.halfBody.shader.display = "none"
-        modelsIMGDisplay.fullBody.shader.display = "none"
-    } else {
-        modelsIMGDisplay.headShot.shader.display = "flex"
-        modelsIMGDisplay.halfBody.shader.display = "flex"
-        modelsIMGDisplay.fullBody.shader.display = "flex"
-    }
+    // shader
+    modelsIMGDisplay.headShot.shader.display = indexes.custom.shader == 1 ? "flex" : "none"
+    modelsIMGDisplay.halfBody.shader.display = indexes.custom.shader == 1 ? "flex" : "none"
+    modelsIMGDisplay.fullBody.shader.display = indexes.custom.shader == 1 ? "flex" : "none"
 
-    if (indexCustom[2] === 0) {
-        modelsIMGDisplay.headShot.paintedLines.display = "none"
-        modelsIMGDisplay.halfBody.paintedLines.display = "none"
-        modelsIMGDisplay.fullBody.paintedLines.display = "none"
-    } else {
-        modelsIMGDisplay.headShot.paintedLines.display = "flex"
-        modelsIMGDisplay.halfBody.paintedLines.display = "flex"
-        modelsIMGDisplay.fullBody.paintedLines.display = "flex"
-    }
+    // lines
+    modelsIMGDisplay.headShot.lines.display = indexes.custom.lines == 1 ? "flex" : "none"
+    modelsIMGDisplay.halfBody.lines.display = indexes.custom.lines == 1 ? "flex" : "none"
+    modelsIMGDisplay.fullBody.lines.display = indexes.custom.lines == 1 ? "flex" : "none"
 
-    if (indexCustom[5] === 0) {
-        modelsIMGDisplay.halfBody.NSFW.display = "none"
-        modelsIMGDisplay.fullBody.NSFW.display = "none"
-    } else {
-        modelsIMGDisplay.halfBody.NSFW.display = "flex"
-        modelsIMGDisplay.fullBody.NSFW.display = "flex"
-    }
+    // nsfw
+    modelsIMGDisplay.halfBody.NSFW.display = indexes.custom.nsfw == 1 ? "flex" : "none"
+    modelsIMGDisplay.fullBody.NSFW.display = indexes.custom.nsfw == 1 ? "flex" : "none"
 }
 
-function changeValue(tab, toChange, value) {
-
-    if (tab === 0) { // custom
-        if (toChange === 0) { // qualidade 
-            if (value === false) { 
-                document.getElementById("flatColor").classList.replace("no", "yes")
-                document.getElementById("Shader").classList.replace("yes", "no")
-                indexCustom[0] = 0
-            } else {
-                document.getElementById("flatColor").classList.replace("yes", "no")
-                document.getElementById("Shader").classList.replace("no", "yes")
-                indexCustom[0] = 1
-            }
-        }
-        if (toChange === 1) {
-            if (value === 0) {
-                document.getElementById("HS").classList.replace("no", "yes")
-                document.getElementById("HB").classList.replace("yes", "no")
-                document.getElementById("FB").classList.replace("yes", "no")
-                indexCustom[1] = 0
-            }
-            if (value === 1) {
-                document.getElementById("HS").classList.replace("yes", "no")
-                document.getElementById("HB").classList.replace("no", "yes")
-                document.getElementById("FB").classList.replace("yes", "no")
-                indexCustom[1] = 1
-            }
-            if (value === 2) {
-                document.getElementById("HS").classList.replace("yes", "no")
-                document.getElementById("HB").classList.replace("yes", "no")
-                document.getElementById("FB").classList.replace("no", "yes")
-                indexCustom[1] = 2
-            }
-        }
-        if (toChange === 2) {
-            if (value === false) {
-                document.getElementById("NL").classList.replace("no", "yes")
-                document.getElementById("PL").classList.replace("yes", "no")
-                indexCustom[2] = 0
-            } else {
-                document.getElementById("NL").classList.replace("yes", "no")
-                document.getElementById("PL").classList.replace("no", "yes")
-                indexCustom[2] = 1
-            }
-        }
-        if (toChange === 3) {
-            if (indexCustom[3] <= 0 && value === -1) {} else {
-                indexCustom[3] += value
-                document.getElementById("ocsCustomIndex").innerHTML = indexCustom[3] + 1
-            }
-        }
-        if (toChange === 4) {
-            if (indexCustom[4] <= 0 && value === -1) {} else {
-                indexCustom[4] += value
-                document.getElementById("altsCustomIndex").innerHTML = indexCustom[4] + 1
-            }
-        }
-        if (toChange === 5) {
-            if (value === false) {
-                document.getElementById("nsfwCN").classList.replace("no", "yes")
-                document.getElementById("nsfwCY").classList.replace("yes", "no")
-                indexCustom[5] = 0
-            } else {
-                document.getElementById("nsfwCN").classList.replace("yes", "no")
-                document.getElementById("nsfwCY").classList.replace("no", "yes")
-                indexCustom[5] = 1
-            }
-        }
-        calc(0)
-    }
-
-    if (tab === 1) { // abraçadinhos
-        if (toChange === 0) {
-            if (value === 0) {
-                document.getElementById("ocsAbraca1").classList.replace("no", "yes")
-                document.getElementById("ocsAbraca2").classList.replace("yes", "no")
-                indexAbraca[0] = 0
-            } else {
-                document.getElementById("ocsAbraca1").classList.replace("yes", "no")
-                document.getElementById("ocsAbraca2").classList.replace("no", "yes")
-                indexAbraca[0] = 1
-            }
-        }
-        if (toChange === 1) {
-            if (value === 0) {
-                document.getElementById("CSAbraca").classList.replace("no", "yes")
-                document.getElementById("ImgAbraca").classList.replace("yes", "no")
-                document.getElementById("BGAbraca").classList.replace("yes", "no")
-                indexAbraca[1] = 0
-            } else if (value === 1) {
-                document.getElementById("CSAbraca").classList.replace("yes", "no")
-                document.getElementById("ImgAbraca").classList.replace("no", "yes")
-                document.getElementById("BGAbraca").classList.replace("yes", "no")
-                indexAbraca[1] = 1
-            } else {
-                document.getElementById("CSAbraca").classList.replace("yes", "no")
-                document.getElementById("ImgAbraca").classList.replace("yes", "no")
-                document.getElementById("BGAbraca").classList.replace("no", "yes")
-                indexAbraca[1] = 2
-            }
-        }
-        calc(1)
-    }
-
-    if (tab === 2) { // show your goods
-        if (toChange === 0) {
-            if (value === 0) {
-                document.getElementById("CSGoods").classList.replace("no", "yes")
-                document.getElementById("BGGoods").classList.replace("yes", "no")
-                indexgoods[0] = 0
-            } else {
-                document.getElementById("CSGoods").classList.replace("yes", "no")
-                document.getElementById("BGGoods").classList.replace("no", "yes")
-                indexgoods[0] = 1
-            }
-        }
-        if (toChange === 1) {
-            if (value === 0) {
-                document.getElementById("nsfwGN").classList.replace("no", "yes")
-                document.getElementById("nsfwGY").classList.replace("yes", "no")
-                indexgoods[1] = 0
-            } else {
-                document.getElementById("nsfwGN").classList.replace("yes", "no")
-                document.getElementById("nsfwGY").classList.replace("no", "yes")
-                indexgoods[1] = 1
-            }
-        }
-        calc(2)
-    }
-
-    if (tab === 3) { // pride face
-        if (value === 0) {
-            document.getElementById("CSPride").classList.replace("no", "yes")
-            document.getElementById("BGPride").classList.replace("yes", "no")
-            IndexPride = 0
-        } else {
-            document.getElementById("CSPride").classList.replace("yes", "no")
-            document.getElementById("BGPride").classList.replace("no", "yes") 
-            IndexPride = 1
-        }
-        calc(3)
-    }
-
-    if (tab === 4) {
-        if (toChange === 0) {
-            if (value === 0) {
-                document.getElementById("PFHN").classList.replace("no", "yes")
-                document.getElementById("PFHY").classList.replace("yes", "no")
-                indexHalloween[0] = 0
-            } else {
-                document.getElementById("PFHN").classList.replace("yes", "no")
-                document.getElementById("PFHY").classList.replace("no", "yes")
-                indexHalloween[0] = 1
-            }
-        }
-        if (toChange === 1) {
-            if (value === 0) {
-                document.getElementById("ALTNSFWN").classList.replace("no", "yes")
-                document.getElementById("ALTNSFWY").classList.replace("yes", "no")
-                indexHalloween[1] = 0
-            } else {
-                document.getElementById("ALTNSFWN").classList.replace("yes", "no")
-                document.getElementById("ALTNSFWY").classList.replace("no", "yes")
-                indexHalloween[1] = 1
-            }
-        }
-        if (toChange === 2) {
-            if (value === 0 && indexHalloween[2] >= 1) {
-                indexHalloween[2]--
-            }
-            if (value === 1) {
-                indexHalloween[2]++
-            }
-            document.getElementById("suitsH").innerHTML = indexHalloween[2] + 1
-        }
-        if (toChange === 3) {
-            if (value === 0) {
-                document.getElementById("FCH").classList.replace("no", "yes")
-                document.getElementById("SH").classList.replace("yes", "no")
-                indexHalloween[3] = 0
-            } else {
-                document.getElementById("FCH").classList.replace("yes", "no")
-                document.getElementById("SH").classList.replace("no", "yes") 
-                indexHalloween[3] = 1
-            }
-        }
-        calc(4)
-    }
-    updateModel()
-}
-
-function applyDiscount(value) {
-    if (customDiscount[0] === true) {
-        if (value < 20) {
-            value -= value * customDiscount[1]
-        } else {
-            value -= value * customDiscount[2]
-        }
-        return value
-    }
-}
-
-function calc(tab) {
-    if (tab === 0) {
-        let calcCS1 = pricesCustom0[indexCustom[0]] + pricesCustom1[indexCustom[1]] + pricesCustom2[indexCustom[2]] + pricesCustom5[indexCustom[5]]
-        
-        if (indexCustom[3] !== 0 && indexCustom[4] !== 0) {
-            const calcCS2 = calcCS1 + ( calcCS1 * (indexCustom[3] * pricesCustom3))
-            let price = calcCS2 + (calcCS2 * (indexCustom[4] * pricesCustom4))
-            if (customDiscount[0]) {
-                price = applyDiscount(price)
-            }
-            console.log(price)
-            document.getElementById("totalCalc").innerHTML = currency + price
-        } else if (indexCustom[3] !== 0 && indexCustom[4] === 0) {
-            let price = calcCS1 + (calcCS1 * (indexCustom[3] * pricesCustom3))
-            
-            if (customDiscount[0]) {
-                price = applyDiscount(price)
-            }
-            document.getElementById("totalCalc").innerHTML = currency + price
-        } else if (indexCustom[3] === 0 && indexCustom[4] !== 0) {
-            let price = calcCS1 + (calcCS1 * (indexCustom[4] * pricesCustom4))
-            
-            if (customDiscount[0]) {
-                price = applyDiscount(price)
-            }
-            document.getElementById("totalCalc").innerHTML = currency + price
-        } else if (indexCustom[3] === 0 && indexCustom[4] === 0){
-            if (customDiscount[0]) {
-                calcCS1 = applyDiscount(calcCS1)
-        
-            }
-document.getElementById("totalCalc").innerHTML = currency + calcCS1
-        }
-        
-    }
-    if (tab === 1) {
-        const price = pricesAbraca0[indexAbraca[0]] + pricesAbraca1[indexAbraca[1]]
-        document.getElementById("totalCalc1").innerHTML = currency + price
-    }
-    if (tab === 2) {
-        const price = pricesGoods0[indexgoods[0]] + pricesGoods1[indexgoods[1]]
-        document.getElementById("totalCalc2").innerHTML = currency + price
-    }
-    if (tab === 3) {
-        const price = pricesPride0[IndexPride]
-        document.getElementById("totalCalc3").innerHTML = currency + price
-    }
-    if (tab === 4) {
-        const step1 = pricesHalloween0[indexHalloween[0]] + pricesHalloween1[indexHalloween[1]] + pricesHalloween3[indexHalloween[3]]
-        if (indexHalloween[2] > 0) {
-            const price = step1 + (step1 * (pricesHalloween2 * indexHalloween[2]))
-            document.getElementById("totalCalc4").innerHTML = currency + price
-        } else {
-            document.getElementById("totalCalc4").innerHTML = currency + step1
-        }
+const tab = n => {
+    type = n
+    for (const i in typesTab) {
+        i == n ? typesTab[i].classList.replace("false", "true") : typesTab[i].classList.replace("true", "false")
+        types[i].style.display = i == n ? "inline" : "none"
+        updateModel()
     }
 }
 
 
+const indexes = {
+    cur: 0,
+    custom: {
+        size: 0,
+        shader: 0,
+        lines: 0,
+        nsfw: 0,
+        ocs: 0,
+        alts: 0
+    },
+    abraca: {
+        ocs: 0,
+        bg: 0
 
+    },
+    goods: {
+        bg: 0,
+        nsfw: 0
+    },
+    pride: {
+        bg: 0
+    }, 
+    halloween: {
+        abobora: 0,
+        nsfw: 0,
+        suits: 0,
+        shader: 0
+    }
+}
+
+indexes.cur = (document.getElementById("awa").attributes.currency.value == 1) ? 1 : 0
+
+let cur = prices[indexes.cur].cur
+
+const changeCur = c => {
+    const el = [
+        document.getElementById("r"),
+        document.getElementById("d")
+    ]
+    for (const n in el) c == n ? (el[n].classList.replace("false", "true"), cur = prices[c].cur, indexes.cur = c) : el[n].classList.replace("true", "false")
+    calc()
+}
+
+
+let dateref = new Date()
+const date = {
+    day: dateref.getDate(),
+    month: dateref.getMonth(),
+    year: dateref.getFullYear()
+}
+const checkToday = () => {
+    // halloween
+    (date.month !== 9) ?  typesTab[4].classList.replace("dis", "ind") : typesTab[4].classList.replace("ind", "dis")
+}
+checkToday()
+
+const changeValue = (tab, toChange, value) => {
+    const buttons = {
+        custom: {
+            shader: [
+                document.getElementById("flatColor"),
+                document.getElementById("Shader")
+            ],
+            size: [
+                document.getElementById("HS"),
+                document.getElementById("HB"),
+                document.getElementById("FB")
+            ],
+            lines: [
+                document.getElementById("NL"),
+                document.getElementById("PL")
+            ],
+            nsfw: [
+                document.getElementById("nsfwCN"),
+                document.getElementById("nsfwCY")
+            ],
+            ocs: document.getElementById("ocsCustomIndex"),
+            alts: document.getElementById("altsCustomIndex")
+        },
+        abraca: {
+            ocs: [
+                document.getElementById("ocsAbraca1"),
+                document.getElementById("ocsAbraca2")
+            ],
+            bg: [
+                document.getElementById("CSAbraca"),
+                document.getElementById("ImgAbraca"),
+                document.getElementById("BGAbraca")
+            ]
+        },
+        goods: {
+            bg: [
+                document.getElementById("CSGoods"),
+                document.getElementById("BGGoods")
+            ],
+            nsfw: [
+                document.getElementById("nsfwGN"),
+                document.getElementById("nsfwGY")
+            ]
+        },
+        pride: {
+            bg: [
+                document.getElementById("CSPride"),
+                document.getElementById("BGPride")
+            ]
+        },
+        halloween: {
+            abobora: [
+                document.getElementById("PFHN"),
+                document.getElementById("PFHY")
+            ],
+            nsfw: [
+                document.getElementById("ALTNSFWN"),
+                document.getElementById("ALTNSFWY")
+            ],
+            shader: [
+                document.getElementById("FCH"),
+                document.getElementById("SH")
+            ],
+            suits: document.getElementById("suitsH")
+        }
+    }
+    
+    if (tab == 0) {
+        if (toChange == 0) { //shader
+            for (const n in buttons.custom.shader) n == value ? (buttons.custom.shader[value].classList.replace("no", "yes"), indexes.custom.shader = value) : buttons.custom.shader[parseInt(n)].classList.replace("yes", "no")
+        } else if (toChange == 1) { // size
+            for (const n in buttons.custom.size) n == value ? (buttons.custom.size[value].classList.replace("no", "yes"), indexes.custom.size = value) : buttons.custom.size[parseInt(n)].classList.replace("yes", "no")
+        } else if (toChange == 2) { // lines
+            for (const n in buttons.custom.lines) n == value ? (buttons.custom.lines[value].classList.replace("no", "yes"), indexes.custom.lines = value) : buttons.custom.lines[parseInt(n)].classList.replace("yes", "no")
+        } else if (toChange == 3) { // ocs
+            (indexes.custom.ocs <= 0 && value == -1) ? value = value : (indexes.custom.ocs += value, buttons.custom.ocs.innerHTML = indexes.custom.ocs + 1)
+        } else if (toChange == 4) { // alts
+            (indexes.custom.alts <= 0 && value == -1) ? value = value : (indexes.custom.alts += value, buttons.custom.alts.innerHTML = indexes.custom.alts + 1)
+        } else if (toChange == 5) { // nsfw
+            for (const n in buttons.custom.nsfw) n == value ? (buttons.custom.nsfw[value].classList.replace("no", "yes"), indexes.custom.nsfw = value) : buttons.custom.nsfw[parseInt(n)].classList.replace("yes", "no")
+        }
+        updateModel()
+    } else if (tab == 1) {
+        if (toChange == 0) {
+            for (const n in buttons.abraca.ocs) n == value ? (buttons.abraca.ocs[value].classList.replace("no", "yes"), indexes.abraca.ocs = value) : buttons.abraca.ocs[parseInt(n)].classList.replace("yes", "no")
+        } else if (toChange == 1) {
+            for (const n in buttons.abraca.bg) n == value ? (buttons.abraca.bg[value].classList.replace("no", "yes"), indexes.abraca.bg = value) : buttons.abraca.bg[parseInt(n)].classList.replace("yes", "no")
+        }
+    } else if (tab == 2) {
+        if (toChange == 0) {
+            for (const n in buttons.goods.bg) n == value ? (buttons.goods.bg[value].classList.replace("no", "yes"), indexes.goods.bg = value) : buttons.goods.bg[parseInt(n)].classList.replace("yes", "no")
+        } else if (toChange == 1) {
+            for (const n in buttons.goods.nsfw) n == value ? (buttons.goods.nsfw[value].classList.replace("no", "yes"), indexes.goods.nsfw = value) : buttons.goods.nsfw[parseInt(n)].classList.replace("yes", "no")
+        }
+    } else if (tab == 3) {
+        for (const n in buttons.pride.bg) n == value ? (buttons.pride.bg[value].classList.replace("no", "yes"), indexes.pride.bg = value) : buttons.pride.bg[parseInt(n)].classList.replace("yes", "no")
+    } else if (tab == 4) {
+        if (toChange == 0) {
+            for (const n in buttons.halloween.abobora) n == value ? (buttons.halloween.abobora[value].classList.replace("no", "yes"), indexes.halloween.abobora = value) : buttons.halloween.abobora[parseInt(n)].classList.replace("yes", "no")
+        } else if (toChange == 1) {
+            for (const n in buttons.halloween.nsfw) n == value ? (buttons.halloween.nsfw[value].classList.replace("no", "yes"), indexes.halloween.nsfw = value) : buttons.halloween.nsfw[parseInt(n)].classList.replace("yes", "no")
+        } else if (toChange == 2) {
+            (indexes.halloween.suits <= 0 && value == -1) ? value = value : (indexes.halloween.suits += value, buttons.halloween.suits.innerHTML = indexes.halloween.suits + 1)
+        } else if (toChange == 3) {
+            for (const n in buttons.halloween.shader) n == value ? (buttons.halloween.shader[value].classList.replace("no", "yes"), indexes.halloween.shader = value) : buttons.halloween.shader[parseInt(n)].classList.replace("yes", "no")
+        }
+    }
+    calc()
+}
+
+const calc = () => {
+    let results = {
+        custom: 5,
+        abraca: 5,
+        goods: 5,
+        pride: 5,
+        halloween: 7.5
+    }
+    const obj = prices[indexes.cur]
+    
+    // CUSTOM
+    // common
+    results.custom = obj.custom.size[indexes.custom.size] + obj.custom.shader[indexes.custom.shader] + obj.custom.line[indexes.custom.lines] + obj.custom.nsfw[indexes.custom.nsfw]
+    // just ocs
+    results.custom = (indexes.custom.ocs > 0 && indexes.custom.alts == 0) ? (results.custom + (results.custom * (obj.custom.ocs * indexes.custom.ocs))) : results.custom
+    // just alts
+    results.custom = (indexes.custom.ocs == 0 && indexes.custom.alts > 0) ? (results.custom + (results.custom * (obj.custom.alts * indexes.custom.alts))) : results.custom
+    // both
+    results.custom = (indexes.custom.ocs > 0 && indexes.custom.alts > 0) ? ((results.custom + (results.custom * (obj.custom.ocs * indexes.custom.ocs))) + (results.custom * (obj.custom.alts * indexes.custom.alts))) : results.custom
+
+    // ABRAÇADINHOS
+    results.abraca = obj.abraca.ocs[indexes.abraca.ocs] + obj.abraca.bg[indexes.abraca.bg]
+
+    // SHOW YOUR GOODS
+    results.goods = obj.goods.bg[indexes.goods.bg] + obj.goods.nsfw[indexes.goods.nsfw]
+
+    // PRIDE FACE
+    results.pride = obj.pride.bg[indexes.pride.bg]
+
+    // HALLOWEEN
+    // common
+    results.halloween = obj.halloween.abobora[indexes.halloween.abobora] + obj.halloween.nsfw[indexes.halloween.nsfw] + obj.halloween.shader[indexes.halloween.shader]
+    // with more suits
+    results.halloween = (indexes.halloween.suits > 0) ? (results.halloween + (results.halloween * (obj.halloween.suits * indexes.halloween.suits))) : results.halloween
+
+    // setting calcs
+    document.getElementById("totalCalc").innerHTML = cur + results.custom
+    document.getElementById("totalCalc1").innerHTML = cur + results.abraca
+    document.getElementById("totalCalc2").innerHTML = cur + results.goods
+    document.getElementById("totalCalc3").innerHTML = cur + results.pride
+    document.getElementById("totalCalc4").innerHTML = cur + results.halloween
+}
+
+calc()
+changeCur(indexes.cur)
